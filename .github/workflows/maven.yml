@@ -50,7 +50,7 @@ jobs:
           ref: Test  
 
       - name: Create Pull Request from Test to Acceptance
-        uses: peter-evans/create-pull-request@v6
+        uses: AnaMariaOlaruNHLstenden/create-pull-request@v6
         with:
           branch: Test
           base: Acceptance

@@ -39,11 +39,6 @@ public class BitmapItem extends SlideItem {
 		}
 	}
 
-// An empty bitmap-item
-	public BitmapItem() {
-		this(0, null);
-	}
-
 // give the filename of the image
 	public String getName() {
 		return imageName;
@@ -51,18 +46,14 @@ public class BitmapItem extends SlideItem {
 
 // give the  bounding box of the image
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
-		return new Rectangle((int) (myStyle.indent * scale), 0,
-				(int) (bufferedImage.getWidth(observer) * scale),
-				((int) (myStyle.leading * scale)) + 
-				(int) (bufferedImage.getHeight(observer) * scale));
+		return new Rectangle((int) (myStyle.indent * scale), 0, (int) (bufferedImage.getWidth(observer) * scale), ((int) (myStyle.leading * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
 	}
 
 // draw the image
-	public void draw(int x, int y, float scale, Graphics g, Style myStyle, ImageObserver observer) {
+	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, Style myStyle) {
 		int width = x + (int) (myStyle.indent * scale);
 		int height = y + (int) (myStyle.leading * scale);
-		g.drawImage(bufferedImage, width, height,(int) (bufferedImage.getWidth(observer)*scale),
-                (int) (bufferedImage.getHeight(observer)*scale), observer);
+		g.drawImage(bufferedImage, width, height,(int) (bufferedImage.getWidth(observer)*scale), (int) (bufferedImage.getHeight(observer)*scale), observer);
 	}
 
 	public String toString() {

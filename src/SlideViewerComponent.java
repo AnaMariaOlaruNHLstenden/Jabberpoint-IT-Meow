@@ -56,18 +56,34 @@ public class SlideViewerComponent extends JComponent {
 		frame.setTitle(presentation.getTitle());
 	}
 
-// draw the slide
+	// draw the slide
+	@Override
 	public void paintComponent(Graphics g) {
+		super.paintComponent(g); // Make sure component is properly refreshed
+		
 		g.setColor(BGCOLOR);
 		g.fillRect(0, 0, getSize().width, getSize().height);
+		
+		// Check if slide is available
 		if (presentation.getSlideNumber() < 0 || slide == null) {
 			return;
 		}
+		
 		g.setFont(labelFont);
 		g.setColor(COLOR);
-		g.drawString("Slide " + (1 + presentation.getSlideNumber()) + " of " +
-                 presentation.getSize(), XPOS, YPOS);
+		g.drawString("Slide " + (1 + presentation.getSlideNumber()) + " of " + presentation.getSize(), XPOS, YPOS);
+		
+		// Define where slide content will be drawn
 		Rectangle area = new Rectangle(0, YPOS, getWidth(), (getHeight() - YPOS));
-		slide.draw(g, area, this);
+		
+		int y = YPOS + 40;
+		float scale = 1.0f;
+		
+		for (SlideItem item : slide.getSlideItems()) {
+			Style style = Style.getStyle(item.getLevel()); // Get the style for this item
+			item.draw(g, 0, y, scale, this, style); // Draw with the correct style
+			y += style.leading + style.fontSize;
+		}
 	}
+	
 }

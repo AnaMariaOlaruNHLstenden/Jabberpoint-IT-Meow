@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 /**
  * <p>Presentation maintains the slides in the presentation.</p>
  * <p>There is only instance of this class.</p>

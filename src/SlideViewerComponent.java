@@ -79,11 +79,18 @@ public class SlideViewerComponent extends JComponent {
 		int y = YPOS + 40;
 		float scale = 1.0f;
 		
-		for (SlideItem item : slide.getSlideItems()) {
-			Style style = Style.getStyle(item.getLevel()); // Get the style for this item
-			item.draw(g, 0, y, scale, this, style); // Draw with the correct style
+		for (SlideComponent item : slide.getSlideItems()) {
+			if (!(item instanceof SlideItem)) {
+				continue; // Skip if it's not a SlideItem
+			}
+			
+			SlideItem slideItem = (SlideItem) item;
+			Style style = Style.getStyle(slideItem.getLevel());
+			
+			slideItem.draw(g, 0, y, scale, this, style);
 			y += style.leading + style.fontSize;
 		}
+		
 	}
 	
 }

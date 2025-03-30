@@ -13,9 +13,9 @@ import java.util.ArrayList;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class Presentation {
+public class Presentation implements SlideComponent{
 	private String showTitle; // title of the presentation
-	private ArrayList<Slide> showList = null; // an ArrayList with Slides
+	private ArrayList<SlideComponent> showList = null; // an ArrayList with Slides
 	private int currentSlideNumber = 0; // the slidenummer of the current Slide
 	private SlideViewerComponent slideViewComponent = null; // the viewcomponent of the Slides
 
@@ -74,12 +74,12 @@ public class Presentation {
 
 	// Delete the presentation to be ready for the next one.
 	void clear() {
-		showList = new ArrayList<Slide>();
+		showList = new ArrayList<SlideComponent>();
 		setSlideNumber(-1);
 	}
 
 	// Add a slide to the presentation
-	public void append(Slide slide) {
+	public void append(SlideComponent slide) {
 		showList.add(slide);
 	}
 

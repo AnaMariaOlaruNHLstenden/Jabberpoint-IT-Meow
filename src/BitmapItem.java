@@ -21,13 +21,13 @@ import java.io.IOException;
 */
 
 public class BitmapItem extends SlideItem {
-  private BufferedImage bufferedImage;
-  private String imageName;
-  
-  protected static final String FILE = "File ";
-  protected static final String NOTFOUND = " not found";
+	private BufferedImage bufferedImage;
+	private String imageName;
+	
+	protected static final String FILE = "File ";
+	protected static final String NOTFOUND = " not found";
 
-// level is equal to item-level; name is the name of the file with the Image
+	// level is equal to item-level; name is the name of the file with the Image
 	public BitmapItem(int level, String name) {
 		super(level);
 		imageName = name;
@@ -39,20 +39,22 @@ public class BitmapItem extends SlideItem {
 		}
 	}
 
-// give the filename of the image
+	// give the filename of the image
 	public String getName() {
 		return imageName;
 	}
 
 // give the  bounding box of the image
-	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
-		return new Rectangle((int) (myStyle.indent * scale), 0, (int) (bufferedImage.getWidth(observer) * scale), ((int) (myStyle.leading * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
+	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager) {
+		Style myStyle = styleManager.getStyle(getLevel());
+		return new Rectangle((int) (myStyle.getIndent() * scale), 0, (int) (bufferedImage.getWidth(observer) * scale), ((int) (myStyle.getLeading() * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
 	}
 
 // draw the image
-	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, Style myStyle) {
-		int width = x + (int) (myStyle.indent * scale);
-		int height = y + (int) (myStyle.leading * scale);
+	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager) {
+		Style myStyle = styleManager.getStyle(getLevel());
+		int width = x + (int) (myStyle.getIndent() * scale);
+		int height = y + (int) (myStyle.getLeading() * scale);
 		g.drawImage(bufferedImage, width, height,(int) (bufferedImage.getWidth(observer)*scale), (int) (bufferedImage.getHeight(observer)*scale), observer);
 	}
 

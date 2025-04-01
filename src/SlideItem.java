@@ -25,7 +25,7 @@ public abstract class SlideItem implements Drawable, SlideComponent{
 	}
 	
 	@Override
-	public abstract void draw(Graphics g, int x, int y, float scale, ImageObserver observer, Style style);
+	public abstract void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager);
 	
-	public abstract Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style style);
+	public abstract Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager);
 }

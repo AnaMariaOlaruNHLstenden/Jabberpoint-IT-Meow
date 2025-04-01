@@ -48,9 +48,11 @@ public class TextItem extends SlideItem {
 	}
 
 // give the bounding box of the item
-	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
-		List<TextLayout> layouts = getLayouts(g, myStyle, scale);
-		int xsize = 0, ysize = (int) (myStyle.leading * scale);
+	@Override
+	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager){
+		Style myStyle = styleManager.getStyle(getLevel());
+		List<TextLayout> layouts = getLayouts(g, styleManager, scale);
+		int xsize = 0, ysize = (int) (myStyle.getLeading() * scale);
 		Iterator<TextLayout> iterator = layouts.iterator();
 		while (iterator.hasNext()) {
 			TextLayout layout = iterator.next();
@@ -63,19 +65,22 @@ public class TextItem extends SlideItem {
 			}
 			ysize += layout.getLeading() + layout.getDescent();
 		}
-		return new Rectangle((int) (myStyle.indent*scale), 0, xsize, ysize );
+		return new Rectangle((int) (myStyle.getIndent() *scale), 0, xsize, ysize );
 	}
 
 // draw the item
-	public void draw(Graphics g, int x, int y, float scale, ImageObserver o, Style myStyle) {
+	@Override
+	public void draw(Graphics g, int x, int y, float scale, ImageObserver o, StyleManager styleManager) {
+		Style myStyle = styleManager.getStyle(getLevel());
+		
 		if (text == null || text.length() == 0) {
 			return;
 		}
-		List<TextLayout> layouts = getLayouts(g, myStyle, scale);
-		Point pen = new Point(x + (int)(myStyle.indent * scale), 
-				y + (int) (myStyle.leading * scale));
+		
+		List<TextLayout> layouts = getLayouts(g, styleManager, scale);
+		Point pen = new Point(x + (int)(myStyle.getIndent() * scale), y + (int) (myStyle.getLeading() * scale));
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.setColor(myStyle.color);
+		g2d.setColor(myStyle.getColor());
 		Iterator<TextLayout> it = layouts.iterator();
 		while (it.hasNext()) {
 			TextLayout layout = it.next();
@@ -85,13 +90,15 @@ public class TextItem extends SlideItem {
 		}
 	  }
 
-	private List<TextLayout> getLayouts(Graphics g, Style s, float scale) {
+	private List<TextLayout> getLayouts(Graphics g, StyleManager styleManager, float scale) {
+		Style s = styleManager.getStyle(getLevel());
+		
 		List<TextLayout> layouts = new ArrayList<TextLayout>();
 		AttributedString attrStr = getAttributedString(s, scale);
     	Graphics2D g2d = (Graphics2D) g;
     	FontRenderContext frc = g2d.getFontRenderContext();
     	LineBreakMeasurer measurer = new LineBreakMeasurer(attrStr.getIterator(), frc);
-    	float wrappingWidth = (Slide.WIDTH - s.indent) * scale;
+    	float wrappingWidth = (Slide.WIDTH - s.getIndent()) * scale;
     	while (measurer.getPosition() < getText().length()) {
     		TextLayout layout = measurer.nextLayout(wrappingWidth);
     		layouts.add(layout);

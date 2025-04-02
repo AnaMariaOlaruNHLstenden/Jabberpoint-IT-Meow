@@ -13,18 +13,18 @@ import java.util.Vector;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class Slide implements Drawable{
+public class Slide implements Drawable, SlideComponent{
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
 	protected String title; // title is saved separately
-	protected Vector<SlideItem> items; // slide items are saved in a Vector
+	protected Vector<SlideComponent> items; // slide items are saved in a Vector
 
 	public Slide() {
-		items = new Vector<SlideItem>();
+		items = new Vector<SlideComponent>();
 	}
 
 	// Add a slide item
-	public void append(SlideItem anItem) {
+	public void append(SlideComponent anItem) {
 		items.addElement(anItem);
 	}
 
@@ -38,18 +38,13 @@ public class Slide implements Drawable{
 		title = newTitle;
 	}
 
-	// Create TextItem of String, and add the TextItem 
-	public void append(int level, String message) {
-		append(new TextItem(level, message));
-	}
-
 	// give the  SlideItem
-	public SlideItem getSlideItem(int number) {
-		return (SlideItem)items.elementAt(number);
+	public SlideComponent getSlideItem(int number) {
+		return (SlideComponent)items.elementAt(number);
 	}
 
 	// give all SlideItems in a Vector
-	public Vector<SlideItem> getSlideItems() {
+	public Vector<SlideComponent> getSlideItems() {
 		return items;
 	}
 
@@ -62,15 +57,20 @@ public class Slide implements Drawable{
 	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, Style style) {
 		int currentY = y;
 		
-		// Draw title separately
-		TextItem titleItem = new TextItem(0, title);
+
+		// Use Factory to create title item
+		SlideItemFactory factory = new TextItemCreator();
+		SlideItem titleItem = factory.createSlideItem(0, title);
+
+		//Draw title
 		titleItem.draw(g, x, currentY, scale, observer, style);
 		currentY += titleItem.getBoundingBox(g, observer, scale, style).height;
 		
 		// Draw all items
-		for (SlideItem item : items) {
-			item.draw(g, x, currentY, scale, observer, style);
-			currentY += item.getBoundingBox(g, observer, scale, style).height;
+		for (SlideComponent item : items) {
+			SlideItem slideItem = (SlideItem) item;
+			slideItem.draw(g, x, currentY, scale, observer, style);
+			currentY += slideItem.getBoundingBox(g, observer, scale, style).height;
 		}
 	}
 

@@ -29,23 +29,9 @@ public class MenuController extends MenuBar
 
 	private static final long serialVersionUID = 227L;
 
-	//No changes due to easy Maintainability of the code
-	protected static final String ABOUT = "About";
-	protected static final String FILE = "File";
-	protected static final String EXIT = "Exit";
-	protected static final String GOTO = "Go to";
-	protected static final String HELP = "Help";
-	protected static final String NEW = "New";
-	protected static final String NEXT = "Next";
-	protected static final String OPEN = "Open";
-	protected static final String PAGENR = "Page number?";
-	protected static final String PREV = "Prev";
-	protected static final String SAVE = "Save";
-	protected static final String VIEW = "View";
-	
+	//Those are to handle errors and alternatives
 	protected static final String TESTFILE = "test.xml";
 	protected static final String SAVEFILE = "dump.xml";
-	
 	protected static final String IOEX = "IO Exception: ";
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
@@ -56,14 +42,14 @@ public class MenuController extends MenuBar
 			this.commands = new HashMap<>();
 
 			// Create and register command objects
-			setCommand(NEXT, new NextSlideCommand(presentation));
-			setCommand(PREV, new PrevSlideCommand(presentation));
-			setCommand(EXIT, new ExitCommand(presentation, parent));
-			setCommand(OPEN, new OpenCommand(presentation, parent));
-			setCommand(SAVE, new SaveCommand(presentation, parent));
-			setCommand(NEW, new NewCommand(presentation, parent));
-			setCommand(GOTO, new GoToCommand(presentation));
-			setCommand(ABOUT, new AboutCommand(parent));
+			setCommand(MenuCommandKey.NEXT.getLabel(), new NextSlideCommand(presentation));
+			setCommand(MenuCommandKey.PREV.getLabel(), new PrevSlideCommand(presentation));
+			setCommand(MenuCommandKey.EXIT.getLabel(), new ExitCommand(presentation, parent));
+			setCommand(MenuCommandKey.OPEN.getLabel(), new OpenCommand(presentation, parent));
+			setCommand(MenuCommandKey.SAVE.getLabel(), new SaveCommand(presentation, parent));
+			setCommand(MenuCommandKey.NEW.getLabel(), new NewCommand(presentation, parent));
+			setCommand(MenuCommandKey.GOTO.getLabel(), new GoToCommand(presentation));
+			setCommand(MenuCommandKey.ABOUT.getLabel(), new AboutCommand(parent));
 
 			// Build menus
 			add(createFileMenu());
@@ -84,51 +70,56 @@ public class MenuController extends MenuBar
 	}
 
 	private Menu createFileMenu() {
-		Menu fileMenu = new Menu(FILE);
-		MenuItem openItem = mkMenuItem(OPEN);
-		openItem.addActionListener(e -> executeCommand(OPEN));
+		Menu fileMenu = new Menu(MenuCommandKey.FILE.getLabel());
+
+		MenuItem newItem = mkMenuItem(MenuCommandKey.NEW.getLabel());
+		newItem.addActionListener(e -> executeCommand(MenuCommandKey.NEW.getLabel()));
+		fileMenu.add(newItem);
+
+		MenuItem openItem = mkMenuItem(MenuCommandKey.OPEN.getLabel());
+		openItem.addActionListener(e -> executeCommand(MenuCommandKey.OPEN.getLabel()));
 		fileMenu.add(openItem);
 
-		MenuItem saveItem = mkMenuItem(SAVE);
-		saveItem.addActionListener(e -> executeCommand(SAVE));
+		MenuItem saveItem = mkMenuItem(MenuCommandKey.SAVE.getLabel());
+		saveItem.addActionListener(e -> executeCommand(MenuCommandKey.SAVE.getLabel()));
 		fileMenu.add(saveItem);
 
 		fileMenu.addSeparator();
 
-		MenuItem exitItem = mkMenuItem(EXIT);
-		exitItem.addActionListener(e -> executeCommand(EXIT));
+		MenuItem exitItem = mkMenuItem(MenuCommandKey.EXIT.getLabel());
+		exitItem.addActionListener(e -> executeCommand(MenuCommandKey.EXIT.getLabel()));
 		fileMenu.add(exitItem);
 
 		return fileMenu;
 	}
 
 	private Menu createViewMenu() {
-		Menu viewMenu = new Menu(VIEW);
+		Menu viewMenu = new Menu(MenuCommandKey.VIEW.getLabel());
 
-		MenuItem nextItem = mkMenuItem(NEXT);
-		nextItem.addActionListener(e -> executeCommand(NEXT));
+		MenuItem nextItem = mkMenuItem(MenuCommandKey.NEXT.getLabel());
+		nextItem.addActionListener(e -> executeCommand(MenuCommandKey.NEXT.getLabel()));
 		viewMenu.add(nextItem);
 
-		MenuItem prevItem = mkMenuItem(PREV);
-		prevItem.addActionListener(e -> executeCommand(PREV));
+		MenuItem prevItem = mkMenuItem(MenuCommandKey.PREV.getLabel());
+		prevItem.addActionListener(e -> executeCommand(MenuCommandKey.PREV.getLabel()));
 		viewMenu.add(prevItem);
 
-		MenuItem gotoItem = mkMenuItem(GOTO);
-		gotoItem.addActionListener(e -> executeCommand(GOTO));
+		MenuItem gotoItem = mkMenuItem(MenuCommandKey.GOTO.getLabel());
+		gotoItem.addActionListener(e -> executeCommand(MenuCommandKey.GOTO.getLabel()));
 		viewMenu.add(gotoItem);
 
 		return viewMenu;
 	}
 
 	private Menu createHelpMenu() {
-		Menu helpMenu = new Menu(HELP);
-		MenuItem aboutItem = mkMenuItem(ABOUT);
-		aboutItem.addActionListener(e -> executeCommand(ABOUT));
+		Menu helpMenu = new Menu(MenuCommandKey.HELP.getLabel());
+		MenuItem aboutItem = mkMenuItem(MenuCommandKey.ABOUT.getLabel());
+		aboutItem.addActionListener(e -> executeCommand(MenuCommandKey.ABOUT.getLabel()));
 		helpMenu.add(aboutItem);
 		return helpMenu;
 	}
 
-// create a menu item
+	// create a menu item
 	public MenuItem mkMenuItem(String name) {
 		return new MenuItem(name, new MenuShortcut(name.charAt(0)));
 	}

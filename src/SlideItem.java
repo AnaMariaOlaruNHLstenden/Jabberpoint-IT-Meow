@@ -13,7 +13,7 @@ import java.awt.image.ImageObserver;
  * @version 1.6 2014/05/16 Sylvia Stuurman
 */
 
-public abstract class SlideItem implements Drawable{
+public abstract class SlideItem implements Drawable, SlideComponent{
 	private int level;
 
 	public SlideItem(int lev) {

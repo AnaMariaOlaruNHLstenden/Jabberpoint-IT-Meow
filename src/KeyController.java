@@ -56,6 +56,9 @@ public class KeyController extends KeyAdapter implements KeyListener
 
 	// This method allows users to set their own key commands.
 	public void setKeyCommand(int keyCode, Command command) {
+		if (keyCommands.containsKey(keyCode)) {
+			throw new IllegalArgumentException("Key code " + keyCode + " is already assigned to another command.");
+		}
 		keyCommands.put(keyCode, command);
 	}
 

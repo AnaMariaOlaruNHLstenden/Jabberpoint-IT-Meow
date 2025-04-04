@@ -40,7 +40,7 @@ public class Slide implements Drawable, SlideComponent{
 
 	// give the  SlideItem
 	public SlideComponent getSlideItem(int number) {
-		return (SlideComponent)items.elementAt(number);
+		return (SlideItem)items.elementAt(number);
 	}
 
 	// give all SlideItems in a Vector
@@ -54,7 +54,7 @@ public class Slide implements Drawable, SlideComponent{
 	}
 	
 	@Override
-	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, Style style) {
+	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager) {
 		int currentY = y;
 		
 
@@ -62,15 +62,15 @@ public class Slide implements Drawable, SlideComponent{
 		SlideItemFactory factory = new TextItemCreator();
 		SlideItem titleItem = factory.createSlideItem(0, title);
 
-		//Draw title
-		titleItem.draw(g, x, currentY, scale, observer, style);
-		currentY += titleItem.getBoundingBox(g, observer, scale, style).height;
+		// Draw title
+		titleItem.draw(g, x, currentY, scale, observer, styleManager);
+		currentY += titleItem.getBoundingBox(g, observer, scale, styleManager).height;
 		
 		// Draw all items
 		for (SlideComponent item : items) {
 			SlideItem slideItem = (SlideItem) item;
-			slideItem.draw(g, x, currentY, scale, observer, style);
-			currentY += slideItem.getBoundingBox(g, observer, scale, style).height;
+			slideItem.draw(g, x, currentY, scale, observer, styleManager);
+			currentY += slideItem.getBoundingBox(g, observer, scale, styleManager).height;
 		}
 	}
 

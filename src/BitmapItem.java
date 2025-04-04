@@ -21,13 +21,13 @@ import java.io.IOException;
 */
 
 public class BitmapItem extends SlideItem {
-  private BufferedImage bufferedImage;
-  private String imageName;
-  
-  protected static final String FILE = "File ";
-  protected static final String NOTFOUND = " not found";
+	private BufferedImage bufferedImage;
+	private String imageName;
 
-// level is equal to item-level; name is the name of the file with the Image
+	protected static final String FILE = "File ";
+	protected static final String NOTFOUND = " not found";
+
+	// level is equal to item-level; name is the name of the file with the Image
 	public BitmapItem(int level, String name) {
 		super(level);
 		imageName = name;
@@ -36,23 +36,46 @@ public class BitmapItem extends SlideItem {
 		}
 		catch (IOException e) {
 			System.err.println(FILE + imageName + NOTFOUND) ;
+
+			// Check if the file extension is either .jpg, .jpeg, or .png
+			if (isValidImageExtension(imageName)) {
+				try {
+					bufferedImage = ImageIO.read(new File(imageName));
+					if (bufferedImage == null) {
+						System.err.println(FILE + imageName + " is not a valid image file.");
+					}
+				}
+				catch (IOException e) {
+					System.err.println(FILE + imageName + NOTFOUND);
+				}
+			} else {
+				System.err.println(FILE + imageName + " is not a supported image format. Only .jpg, .jpeg, or .png files are allowed.");
+			}
 		}
+
 	}
 
-// give the filename of the image
+	// Helper method to check if the file extension is valid
+	private boolean isValidImageExtension(String fileName) {
+		return fileName.toLowerCase().endsWith(".jpg") || fileName.toLowerCase().endsWith(".jpeg") || fileName.toLowerCase().endsWith(".png");
+	}
+
+	// give the filename of the image
 	public String getName() {
 		return imageName;
 	}
 
-// give the  bounding box of the image
-	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
-		return new Rectangle((int) (myStyle.indent * scale), 0, (int) (bufferedImage.getWidth(observer) * scale), ((int) (myStyle.leading * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
+	// give the  bounding box of the image
+	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager) {
+		Style myStyle = styleManager.getStyle(getLevel());
+		return new Rectangle((int) (myStyle.getIndent() * scale), 0, (int) (bufferedImage.getWidth(observer) * scale), ((int) (myStyle.getLeading() * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
 	}
 
-// draw the image
-	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, Style myStyle) {
-		int width = x + (int) (myStyle.indent * scale);
-		int height = y + (int) (myStyle.leading * scale);
+	// draw the image
+	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager) {
+		Style myStyle = styleManager.getStyle(getLevel());
+		int width = x + (int) (myStyle.getIndent() * scale);
+		int height = y + (int) (myStyle.getLeading() * scale);
 		g.drawImage(bufferedImage, width, height,(int) (bufferedImage.getWidth(observer)*scale), (int) (bufferedImage.getHeight(observer)*scale), observer);
 	}
 

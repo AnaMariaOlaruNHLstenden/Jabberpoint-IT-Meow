@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JabberPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JabberPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DemoPresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DemoPresentation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/JabberPointTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/KeyControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/MenuControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideComponentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideItemTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideViewerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideViewerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +25,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -168,7 +163,7 @@
       <workItem from="1743501543200" duration="12243000" />
       <workItem from="1743607823022" duration="20396000" />
       <workItem from="1743754457439" duration="1571000" />
-      <workItem from="1743758231100" duration="1575000" />
+      <workItem from="1743758231100" duration="4706000" />
     </task>
     <servers />
   </component>

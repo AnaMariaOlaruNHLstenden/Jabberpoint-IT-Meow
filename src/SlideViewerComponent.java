@@ -23,8 +23,8 @@ public class SlideViewerComponent extends JComponent implements SlideViewer {
 	private Font labelFont = null; // font for labels
 	private Presentation presentation = null; // the presentation
 	private JFrame frame = null;
-	
-	private static final long serialVersionUID = 227L;
+
+	private static final long SERIAL_VERSION_UID = 227L;
 	
 	private static final Color BGCOLOR = Color.white;
 	private static final Color COLOR = Color.black;
@@ -34,11 +34,12 @@ public class SlideViewerComponent extends JComponent implements SlideViewer {
 	private static final int XPOS = 1100;
 	private static final int YPOS = 20;
 
-	public SlideViewerComponent(Presentation pres, JFrame frame) {
-		setBackground(BGCOLOR); 
+	public SlideViewerComponent(Presentation pres, JFrame frame, StyleManager styleManager) {
+		setBackground(BGCOLOR);
 		presentation = pres;
 		labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
 		this.frame = frame;
+		this.STYLE_MANAGER = styleManager;
 	}
 
 	public Dimension getPreferredSize() {
@@ -87,10 +88,10 @@ public class SlideViewerComponent extends JComponent implements SlideViewer {
 			}
 
 			SlideItem slideItem = (SlideItem) item;
-			Style style = Style.getStyle(slideItem.getLevel());
+			Style style = STYLE_MANAGER.getStyle(slideItem.getLevel());
 
-			slideItem.draw(g, 0, y, scale, this, style);
-			y += style.leading + style.fontSize;
+			slideItem.draw(g, 0, y, scale, this, STYLE_MANAGER);
+			y += style.getLeading() + style.getFont(1.0f).getSize();
 		}
 	}
 

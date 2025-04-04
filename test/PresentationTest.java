@@ -1,7 +1,9 @@
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import javax.swing.JFrame;
+
+import javax.swing.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 // DummySlide: Minimal concrete subclass of Slide for testing non-UI methods.
 class DummySlide extends Slide {

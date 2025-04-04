@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BitmapItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BitmapItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Drawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JabberPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JabberPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Slide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SlideItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Style.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TextItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PresentationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +50,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "VersionWithMaven",
+    "git-widget-placeholder": "FactoryTests",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/test",
-    "last_opened_file_path": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/src",
+    "last_opened_file_path": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow_FactoryTest/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow_FactoryTest\test" />
       <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

@@ -23,6 +23,7 @@ public class SlideViewerComponent extends JComponent implements SlideViewer {
 	private Font labelFont = null; // font for labels
 	private Presentation presentation = null; // the presentation
 	private JFrame frame = null;
+	private final StyleManager STYLE_MANAGER; // Manages styles
 
 	private static final long SERIAL_VERSION_UID = 227L;
 	

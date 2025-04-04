@@ -31,28 +31,21 @@ public class BitmapItem extends SlideItem {
 	public BitmapItem(int level, String name) {
 		super(level);
 		imageName = name;
-		try {
-			bufferedImage = ImageIO.read(new File(imageName));
-		}
-		catch (IOException e) {
-			System.err.println(FILE + imageName + NOTFOUND) ;
 
-			// Check if the file extension is either .jpg, .jpeg, or .png
-			if (isValidImageExtension(imageName)) {
-				try {
-					bufferedImage = ImageIO.read(new File(imageName));
-					if (bufferedImage == null) {
-						System.err.println(FILE + imageName + " is not a valid image file.");
-					}
+		// Check if the file extension is either .jpg, .jpeg, or .png
+		if (isValidImageExtension(imageName)) {
+			try {
+				bufferedImage = ImageIO.read(new File(imageName));
+				if (bufferedImage == null) {
+					System.err.println(FILE + imageName + " is not a valid image file.");
 				}
-				catch (IOException e) {
-					System.err.println(FILE + imageName + NOTFOUND);
-				}
-			} else {
-				System.err.println(FILE + imageName + " is not a supported image format. Only .jpg, .jpeg, or .png files are allowed.");
 			}
+			catch (IOException e) {
+				System.err.println(FILE + imageName + NOTFOUND);
+			}
+		} else {
+			System.err.println(FILE + imageName + " is not a supported image format. Only .jpg, .jpeg, or .png files are allowed.");
 		}
-
 	}
 
 	// Helper method to check if the file extension is valid

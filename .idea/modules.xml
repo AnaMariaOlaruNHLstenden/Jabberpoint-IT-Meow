@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JabberPoint-IT-Meow_WithMaven.iml" filepath="$PROJECT_DIR$/JabberPoint-IT-Meow_WithMaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JabberPoint-IT-Meow.iml" filepath="$PROJECT_DIR$/JabberPoint-IT-Meow.iml" />
     </modules>
   </component>
 </project>

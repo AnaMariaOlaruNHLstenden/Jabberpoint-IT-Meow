@@ -11,11 +11,11 @@ import java.awt.image.ImageObserver;
  * @version 1.4 2007/07/16 Sylvia Stuurman
  * @version 1.5 2010/03/03 Sylvia Stuurman
  * @version 1.6 2014/05/16 Sylvia Stuurman
- */
+*/
 
 public abstract class SlideItem implements Drawable, SlideComponent{
 	private int level;
-	
+
 	public SlideItem(int lev) {
 		level = lev;
 	}
@@ -26,6 +26,6 @@ public abstract class SlideItem implements Drawable, SlideComponent{
 	
 	@Override
 	public abstract void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager);
-	
+
 	public abstract Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager);
 }

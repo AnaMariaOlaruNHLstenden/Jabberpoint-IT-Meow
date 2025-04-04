@@ -5,30 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Jabberpoint-IT-Meow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JabberPoint-IT-Meow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StyleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/FactoryMethodTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JabberPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SlideViewerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BitmapItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BitmapItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DemoPresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DemoPresentation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Drawable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/JabberPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JabberPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Slide.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SlideItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" afterDir="false" />
@@ -36,14 +19,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Style.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TextItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/JabberPointTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/KeyControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/MenuControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideComponentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideItemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SlideViewerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +28,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,26 +51,37 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.JabberPoint.executor": "Run",
+    "JUnit.PresentationTest.executor": "Run",
+    "JUnit.PresentationTest.testAppendAndGetSlide.executor": "Run",
+    "JUnit.SetKeyCommandTest.executor": "Run",
+    "JUnit.SlideTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "VersionWithMaven",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nefel/OneDrive/Desktop/School Stuffs/Year3 Period3/Software Quality/code/Jabberpoint-IT-Meow",
+    "last_directory_selection": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/test",
+    "last_opened_file_path": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
+    "two.files.diff.last.used.file": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/test/CommandAndCompositePatternTest.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow\src" />
       <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow\.idea" />
@@ -108,12 +94,49 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.JabberPoint">
     <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="JabberPoint" />
-      <module name="JabberPoint-IT-Meow" />
+      <module name="JabberPoint-IT-Meow_WithMaven" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow_WithMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PresentationTest.testAppendAndGetSlide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow_WithMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="METHOD_NAME" value="testAppendAndGetSlide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SetKeyCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow_WithMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SetKeyCommandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SlideTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow_WithMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SlideTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,6 +144,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.JabberPoint" />
+        <item itemvalue="JUnit.PresentationTest" />
+        <item itemvalue="JUnit.SlideTest" />
+        <item itemvalue="JUnit.PresentationTest.testAppendAndGetSlide" />
+        <item itemvalue="JUnit.SetKeyCommandTest" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +165,9 @@
       <workItem from="1743427104507" duration="4168000" />
       <workItem from="1743461824160" duration="5352000" />
       <workItem from="1743501543200" duration="12243000" />
-      <workItem from="1743607823022" duration="1026000" />
+      <workItem from="1743607823022" duration="20396000" />
+      <workItem from="1743754457439" duration="1571000" />
+      <workItem from="1743758231100" duration="5471000" />
     </task>
     <servers />
   </component>

@@ -18,36 +18,36 @@ public class Slide implements Drawable, SlideComponent{
 	public final static int HEIGHT = 800;
 	protected String title; // title is saved separately
 	protected Vector<SlideComponent> items; // slide items are saved in a Vector
-	
+
 	public Slide() {
 		items = new Vector<SlideComponent>();
 	}
-	
+
 	// Add a slide item
 	public void append(SlideComponent anItem) {
 		items.addElement(anItem);
 	}
-	
+
 	// give the title of the slide
 	public String getTitle() {
 		return title;
 	}
-	
+
 	// change the title of the slide
 	public void setTitle(String newTitle) {
 		title = newTitle;
 	}
-	
+
 	// give the  SlideItem
 	public SlideComponent getSlideItem(int number) {
 		return (SlideItem)items.elementAt(number);
 	}
-	
+
 	// give all SlideItems in a Vector
 	public Vector<SlideComponent> getSlideItems() {
 		return items;
 	}
-	
+
 	// give the size of the Slide
 	public int getSize() {
 		return items.size();
@@ -57,10 +57,11 @@ public class Slide implements Drawable, SlideComponent{
 	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager) {
 		int currentY = y;
 		
+
 		// Use Factory to create title item
 		SlideItemFactory factory = new TextItemCreator();
 		SlideItem titleItem = factory.createSlideItem(0, title);
-		
+
 		// Draw title
 		titleItem.draw(g, x, currentY, scale, observer, styleManager);
 		currentY += titleItem.getBoundingBox(g, observer, scale, styleManager).height;
@@ -72,8 +73,7 @@ public class Slide implements Drawable, SlideComponent{
 			currentY += slideItem.getBoundingBox(g, observer, scale, styleManager).height;
 		}
 	}
-	
-	
+
 	// Give the scale for drawing
 	private float getScale(Rectangle area) {
 		return Math.min(((float)area.width) / ((float)WIDTH), ((float)area.height) / ((float)HEIGHT));

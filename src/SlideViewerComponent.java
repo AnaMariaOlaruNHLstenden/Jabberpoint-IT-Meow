@@ -17,14 +17,14 @@ import javax.swing.JFrame;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class SlideViewerComponent extends JComponent {
-	
+public class SlideViewerComponent extends JComponent implements SlideViewer {
+		
 	private Slide slide; // current slide
 	private Font labelFont = null; // font for labels
 	private Presentation presentation = null; // the presentation
 	private JFrame frame = null;
 	private final StyleManager STYLE_MANAGER; // Manages styles
-	
+
 	private static final long SERIAL_VERSION_UID = 227L;
 	
 	private static final Color BGCOLOR = Color.white;
@@ -34,7 +34,7 @@ public class SlideViewerComponent extends JComponent {
 	private static final int FONTHEIGHT = 10;
 	private static final int XPOS = 1100;
 	private static final int YPOS = 20;
-	
+
 	public SlideViewerComponent(Presentation pres, JFrame frame, StyleManager styleManager) {
 		setBackground(BGCOLOR);
 		presentation = pres;
@@ -42,12 +42,14 @@ public class SlideViewerComponent extends JComponent {
 		this.frame = frame;
 		this.STYLE_MANAGER = styleManager;
 	}
-	
+
 	public Dimension getPreferredSize() {
 		return new Dimension(Slide.WIDTH, Slide.HEIGHT);
 	}
-	
-	public void update(Presentation presentation, Slide data) {
+
+	@Override
+	public void update(Presentation presentation, Slide data)
+	{
 		if (data == null) {
 			repaint();
 			return;
@@ -57,7 +59,7 @@ public class SlideViewerComponent extends JComponent {
 		repaint();
 		frame.setTitle(presentation.getTitle());
 	}
-	
+
 	// draw the slide
 	@Override
 	public void paintComponent(Graphics g) {
@@ -80,19 +82,18 @@ public class SlideViewerComponent extends JComponent {
 		
 		int y = YPOS + 40;
 		float scale = 1.0f;
-		
+
 		for (SlideComponent item : slide.getSlideItems()) {
 			if (!(item instanceof SlideItem)) {
 				continue; // Skip if it's not a SlideItem
 			}
-			
+
 			SlideItem slideItem = (SlideItem) item;
 			Style style = STYLE_MANAGER.getStyle(slideItem.getLevel());
-			
+
 			slideItem.draw(g, 0, y, scale, this, STYLE_MANAGER);
 			y += style.getLeading() + style.getFont(1.0f).getSize();
 		}
-		
 	}
-	
+
 }

@@ -1,32 +1,52 @@
-// File: SlideTest.java
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.List;
+import org.junit.jupiter.api.Test;
+import java.util.Vector;
+
+// Dummy implementation of SlideComponent for testing purposes.
+class DummySlideComponent implements SlideComponent {
+    // No additional methods needed for non-UI testing.
+}
 
 public class SlideTest {
 
     @Test
-    public void testSlideConstructorAndTitle() {
+    public void testTitleMethods() {
         Slide slide = new Slide();
-        assertNotNull(slide, "Slide object should be instantiated");
-        assertEquals("Introduction", slide.getTitle(), "Slide title should be set correctly");
+        assertNull(slide.getTitle());
+        slide.setTitle("Test Title");
+        assertEquals("Test Title", slide.getTitle());
     }
 
     @Test
-    public void testSetTitle() {
+    public void testAppendAndGetSlideItem() {
         Slide slide = new Slide();
-        slide.setTitle("New Title");
-        assertEquals("New Title", slide.getTitle(), "Slide title should update correctly");
+        DummySlideComponent item1 = new DummySlideComponent();
+        DummySlideComponent item2 = new DummySlideComponent();
+
+        // Append dummy slide components.
+        slide.append(item1);
+        slide.append(item2);
+
+        // Verify that the size of the slide is updated.
+        assertEquals(2, slide.getSize());
+        // Verify that the correct items are retrieved.
+        assertEquals(item1, slide.getSlideItem(0));
+        assertEquals(item2, slide.getSlideItem(1));
     }
 
     @Test
-    public void testAddSlideItem() {
+    public void testGetSlideItems() {
         Slide slide = new Slide();
-        SlideItem item = new SlideItem("Sample Text", 1); // Assume level 1 for indentation
-        slide.items(item);
+        // Initially, the slide items Vector should be empty.
+        Vector<SlideComponent> items = slide.getSlideItems();
+        assertNotNull(items);
+        assertTrue(items.isEmpty());
 
-        List<SlideItem> items = sli;
-        assertEquals(1, items.size(), "Slide should contain one item");
-        assertEquals("Sample Text", items.get(0).getContent(), "Item content should match");
+        // Append an item and verify the vector updates.
+        DummySlideComponent item = new DummySlideComponent();
+        slide.append(item);
+        items = slide.getSlideItems();
+        assertEquals(1, items.size());
+        assertEquals(item, items.get(0));
     }
 }

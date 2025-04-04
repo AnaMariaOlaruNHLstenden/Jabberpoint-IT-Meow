@@ -17,7 +17,7 @@ import javax.swing.JFrame;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class SlideViewerComponent extends JComponent {
+public class SlideViewerComponent extends JComponent implements SlideViewer {
 		
 	private Slide slide; // current slide
 	private Font labelFont = null; // font for labels
@@ -45,7 +45,9 @@ public class SlideViewerComponent extends JComponent {
 		return new Dimension(Slide.WIDTH, Slide.HEIGHT);
 	}
 
-	public void update(Presentation presentation, Slide data) {
+	@Override
+	public void update(Presentation presentation, Slide data)
+	{
 		if (data == null) {
 			repaint();
 			return;
@@ -91,5 +93,5 @@ public class SlideViewerComponent extends JComponent {
 			y += style.leading + style.fontSize;
 		}
 	}
-	
+
 }

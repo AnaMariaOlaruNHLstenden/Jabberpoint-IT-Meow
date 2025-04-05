@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/FactoryMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FactoryMethodTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dump.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Presentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Presentation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PresentationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SetKeyCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SetKeyCommandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TextItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TextItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testImage.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +48,10 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.JabberPoint.executor": "Coverage",
-    "JUnit.All in JabberPoint-IT-Meow.executor": "Coverage",
+    "JUnit.AboutCommandTest.executor": "Run",
+    "JUnit.All in JabberPoint-IT-Meow.executor": "Run",
     "JUnit.BitmapItemTests.executor": "Run",
+    "JUnit.ExitCommandTest.executor": "Run",
     "JUnit.FactoryMethodTest.executor": "Run",
     "JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItem.executor": "Run",
     "JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile.executor": "Run",
@@ -61,8 +68,14 @@
     "JUnit.FactoryMethodTests.testFactoryWithInvalidInput.executor": "Run",
     "JUnit.FactoryMethodTests.testSlideItemAttributes.executor": "Run",
     "JUnit.FactoryMethodTests.testSlideUsesBitmapItem.executor": "Run",
+    "JUnit.GoToCommandTest.executor": "Run",
+    "JUnit.KeyControllerTest.executor": "Run",
+    "JUnit.OpenCommandTest.executor": "Run",
     "JUnit.PresentationTest.executor": "Run",
     "JUnit.PresentationTest.testAppendAndGetSlide.executor": "Run",
+    "JUnit.PresentationTest.testEmptyPresentationBehavior.executor": "Run",
+    "JUnit.PresentationTest.testSlideNavigationBoundary.executor": "Run",
+    "JUnit.SaveCommandTest.testExecute_IOException.executor": "Run",
     "JUnit.SetKeyCommandTest.executor": "Run",
     "JUnit.SlideTest (1).executor": "Run",
     "JUnit.SlideTest.executor": "Run",
@@ -76,10 +89,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "ALmostCOmplEteVerSion",
+    "git-widget-placeholder": "FactoryTestsComplete",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/test",
-    "last_opened_file_path": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow_FactoryTest/test",
+    "last_opened_file_path": "C:/Users/nefel/OneDrive/Desktop/School Stuffs/Year3 Period3/Software Quality/code/Jabberpoint-IT-Meow/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +108,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nefel\OneDrive\Desktop\School Stuffs\Year3 Period3\Software Quality\code\Jabberpoint-IT-Meow\test" />
       <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow_FactoryTest\test" />
       <recent name="B:\School 23-24\YEAR 2\Period 3\Software Quality\Third attempt\Jabberpoint-IT-Meow\src" />
     </key>
@@ -119,41 +133,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KeyControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FactoryMethodTest" />
-      <option name="METHOD_NAME" value="testBitmapItemFactoryCreatesBitmapItem" />
+      <option name="MAIN_CLASS_NAME" value="KeyControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PresentationTest.testEmptyPresentationBehavior" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="METHOD_NAME" value="testEmptyPresentationBehavior" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PresentationTest.testSlideNavigationBoundary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FactoryMethodTest" />
-      <option name="METHOD_NAME" value="testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TextItemTest.testTextItemBoundingBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TextItemTest" />
-      <option name="METHOD_NAME" value="testTextItemBoundingBox" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TextItemTest.testTextItemDrawUsingRealGraphics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TextItemTest" />
-      <option name="METHOD_NAME" value="testTextItemDrawUsingRealGraphics" />
+      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="METHOD_NAME" value="testSlideNavigationBoundary" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,10 +174,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in JabberPoint-IT-Meow" />
-        <item itemvalue="JUnit.TextItemTest.testTextItemBoundingBox" />
-        <item itemvalue="JUnit.TextItemTest.testTextItemDrawUsingRealGraphics" />
-        <item itemvalue="JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItem" />
-        <item itemvalue="JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile" />
+        <item itemvalue="JUnit.KeyControllerTest" />
+        <item itemvalue="JUnit.PresentationTest" />
+        <item itemvalue="JUnit.PresentationTest.testEmptyPresentationBehavior" />
+        <item itemvalue="JUnit.PresentationTest.testSlideNavigationBoundary" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +216,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$All_in_JabberPoint_IT_Meow.ic" NAME="All in JabberPoint-IT-Meow Coverage Results" MODIFIED="1743852883336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$All_in_JabberPoint_IT_Meow.ic" NAME="All in JabberPoint-IT-Meow Coverage Results" MODIFIED="1743860965215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$JabberPoint.ic" NAME="JabberPoint Coverage Results" MODIFIED="1743849870459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

@@ -1,82 +1,97 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.awt.event.KeyEvent;
-import java.util.HashMap;
-import java.util.Map;
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 import java.awt.Frame;
+import java.awt.event.KeyEvent;
 
-// Dummy classes for Presentation and Frame
-class Presentation { }
-
-
-abstract class Command {
-    protected Presentation presentation;
-    protected Frame parent;
-
-    public Command() {
-        // In this example, no initialization is provided as it's not used in tests.
+class KeyControllerTest {
+    private KeyController keyController;
+    private Presentation mockPresentation;
+    private Frame mockFrame;
+    private Command mockCommand;
+    
+    @BeforeEach
+    void setUp() {
+        mockPresentation = mock(Presentation.class);
+        mockFrame = mock(Frame.class);
+        mockCommand = mock(Command.class);
+        keyController = new KeyController(mockPresentation);
     }
-
-    public abstract void execute();
-}
-
-// DummyCommand subclass that provides a minimal implementation of execute()
-class DummyCommand extends Command {
-    public DummyCommand() {
-        // Optionally initialize presentation and parent if necessary
-    }
-
-    @Override
-    public void execute() {
-        // Minimal implementation for testing purposes
-    }
-}
-
-// Class containing the method to test
-class SetKeyCommandSetup {
-
-    private Map<Integer, Command> keyCommands = new HashMap<>();
-
-    public void setKeyCommand(int keyCode, Command command)
-    {
-        if (keyCommands.containsKey(keyCode))
-        {
-            throw new IllegalArgumentException("Key code " + keyCode + " is already assigned to another command.");
-        }
-        keyCommands.put(keyCode, command);
-    }
-
-    public Map<Integer, Command> getKeyCommands()
-    {
-        return keyCommands;
-    }
-
-}
-
-class SetKeyCommandTest {
-
+    
     @Test
-    public void testSetKeyCommand_Success() {
-        SetKeyCommandSetup setup = new SetKeyCommandSetup();
-        Command saveCommand = new DummyCommand();
-        // Add key command with VK_S key code
-        setup.setKeyCommand(KeyEvent.VK_S, saveCommand);
-        // Verify that the command was added successfully to the map
-        assertEquals(saveCommand, setup.getKeyCommands().get(KeyEvent.VK_S));
+    void testSetKeyCommand_Success() {
+        // Given
+        Command newMockCommand = mock(Command.class);
+        
+        // When
+        keyController.setKeyCommand(KeyEvent.VK_T, newMockCommand);
+        
+        // Then
+        // Simulate key press to verify the command was registered
+        KeyEvent mockKeyEvent = new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_T, 'T');
+        keyController.keyPressed(mockKeyEvent);
+        verify(newMockCommand, times(1)).execute();
     }
-
+    
     @Test
-    public void testSetKeyCommand_DuplicateKey() {
-        SetKeyCommandSetup setup = new SetKeyCommandSetup();
-        Command saveCommand1 = new DummyCommand();
-        Command saveCommand2 = new DummyCommand();
-        // First assignment should succeed
-        setup.setKeyCommand(KeyEvent.VK_S, saveCommand1);
-        // Second assignment with the same key should throw an exception
+    void testSetKeyCommand_DuplicateKey() {
+        // Given
+        Command firstCommand = mock(Command.class);
+        Command secondCommand = mock(Command.class);
+        
+        // When/Then
+        keyController.setKeyCommand(KeyEvent.VK_T, firstCommand);
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            setup.setKeyCommand(KeyEvent.VK_S, saveCommand2);
+            keyController.setKeyCommand(KeyEvent.VK_T, secondCommand);
         });
-        String expectedMessage = "Key code " + KeyEvent.VK_S + " is already assigned to another command.";
+        String expectedMessage = "Key code " + KeyEvent.VK_T + " is already assigned to another command.";
         assertEquals(expectedMessage, thrown.getMessage());
+    }
+    
+    @Test
+    void testDefaultKeyBindings() {
+        // Test some default key bindings
+        KeyEvent nextKeyEvent = new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_PAGE_DOWN, (char) KeyEvent.VK_PAGE_DOWN);
+        keyController.keyPressed(nextKeyEvent);
+        // The NextSlideCommand should have been executed on the presentation
+        verify(mockPresentation, times(1)).nextSlide();
+        
+        KeyEvent prevKeyEvent = new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_PAGE_UP, (char) KeyEvent.VK_PAGE_UP);
+        keyController.keyPressed(prevKeyEvent);
+        // The PrevSlideCommand should have been executed on the presentation
+        verify(mockPresentation, times(1)).prevSlide();
+    }
+    
+    @Test
+    void testKeyPressed_UnregisteredKey() {
+        // Given
+        KeyEvent mockKeyEvent = new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_F1, 'F');
+        
+        // When
+        keyController.keyPressed(mockKeyEvent);
+        
+        // Then
+        // No commands should be executed
+        verifyNoInteractions(mockCommand);
+    }
+    
+    @Test
+    void testMultipleKeysForSameCommand() {
+        // Test that multiple keys can trigger the next slide command
+        KeyEvent[] nextSlideEvents = {
+                new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_PAGE_DOWN, (char) KeyEvent.VK_PAGE_DOWN),
+                new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_DOWN, (char) KeyEvent.VK_DOWN),
+                new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_ENTER, (char) KeyEvent.VK_ENTER),
+                new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_PLUS, '+')
+        };
+        
+        // Each key should trigger nextSlide
+        for (KeyEvent event : nextSlideEvents) {
+            keyController.keyPressed(event);
+        }
+        
+        // Verify nextSlide was called once for each key
+        verify(mockPresentation, times(4)).nextSlide();
     }
 }

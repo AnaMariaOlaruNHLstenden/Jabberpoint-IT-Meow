@@ -59,15 +59,31 @@ public class Presentation implements SlideComponent{
 
 	// go to the previous slide unless your at the beginning of the presentation
 	public void prevSlide() {
-		if (currentSlideNumber > 0) {
-			setSlideNumber(currentSlideNumber - 1);
-	    }
+		if (getCurrentSlide() != null) {
+			if (currentSlideNumber > 0) {
+				setSlideNumber(currentSlideNumber - 1);
+			}
+			else{
+				setSlideNumber(0);
+			}
+		}
+		else {
+			setSlideNumber(0);
+		}
 	}
 
 	// go to the next slide unless your at the end of the presentation.
 	public void nextSlide() {
-		if (currentSlideNumber < (showList.size()-1)) {
-			setSlideNumber(currentSlideNumber + 1);
+		if (getCurrentSlide() != null) {
+			if (currentSlideNumber < (showList.size()-1)) {
+				setSlideNumber(currentSlideNumber + 1);
+			}
+			else{
+				setSlideNumber(showList.size()-1);
+			}
+		}
+		else {
+			setSlideNumber(0);
 		}
 	}
 

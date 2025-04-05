@@ -1,14 +1,38 @@
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+import java.awt.image.ImageObserver;
 import java.util.Vector;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 // Dummy implementation of SlideComponent for testing purposes.
 class DummySlideComponent implements SlideComponent {
     // No additional methods needed for non-UI testing.
+}
+
+// Dummy implementation of SlideItem for testing purposes.
+class DummySlideItem extends SlideItem
+{
+
+    public DummySlideItem(int lev)
+    {
+        super(lev);
+    }
+
+    @Override
+    public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager)
+    {
+
+    }
+
+    @Override
+    public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager)
+    {
+        return null;
+    } // Changed to SlideItem
+    // Implement any required methods from SlideItem interface
 }
 
 public class SlideTest {
@@ -24,8 +48,8 @@ public class SlideTest {
     @Test
     public void testAppendAndGetSlideItem() {
         Slide slide = new Slide();
-        DummySlideComponent item1 = new DummySlideComponent();
-        DummySlideComponent item2 = new DummySlideComponent();
+        DummySlideItem item1 = new DummySlideItem(1);
+        DummySlideItem item2 = new DummySlideItem(2);
 
         // Append dummy slide components.
         slide.append(item1);
@@ -93,4 +117,5 @@ public class SlideTest {
         verify(mockSlide, times(1)).append(mockTextItem);
         assertEquals("Sample text for testing", mockTextItem.getText(), "TextItem text should match the input");
     }
+    
 }

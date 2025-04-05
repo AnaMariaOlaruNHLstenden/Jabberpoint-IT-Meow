@@ -1,36 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE presentation SYSTEM "jabberpoint.dtd">
 <presentation>
-<showtitle>Demo Presentation</showtitle>
-<slide>
-<title>JabberPoint</title>
-<item kind="text" level="1">The Java Presentation Tool</item>
-<item kind="text" level="2">Copyright (c) 1996-2000: Ian Darwin</item>
-<item kind="text" level="2">Copyright (c) 2000-now:</item>
-<item kind="text" level="2">Gert Florijn and Sylvia Stuurman</item>
-<item kind="text" level="4">Starting JabberPoint without a filename</item>
-<item kind="text" level="4">shows this presentation</item>
-<item kind="text" level="1">Navigate:</item>
-<item kind="text" level="3">Next slide: PgDn or Enter</item>
-<item kind="text" level="3">Previous slide: PgUp or up-arrow</item>
-<item kind="text" level="3">Quit: q or Q</item>
-</slide>
-<slide>
-<title>Demonstration of levels and styles</title>
-<item kind="text" level="1">Level 1</item>
-<item kind="text" level="2">Level 2</item>
-<item kind="text" level="1">Again level 1</item>
-<item kind="text" level="1">Level 1 has style number 1</item>
-<item kind="text" level="2">Level 2 has style number 2</item>
-<item kind="text" level="3">This is how level 3 looks like</item>
-<item kind="text" level="4">And this is level 4</item>
-</slide>
-<slide>
-<title>The third slide</title>
-<item kind="text" level="1">To open a new presentation,</item>
-<item kind="text" level="2">use File->Open from the menu.</item>
-<item kind="text" level="1"> </item>
-<item kind="text" level="1">This is the end of the presentation.</item>
-<item kind="image" level="1">JabberPoint.gif</item>
-</slide>
+<showtitle>null</showtitle>
 </presentation>

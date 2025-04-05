@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test/BitmapItemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/FactoryMethodTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TextItemTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItemCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BitmapItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BitmapItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TextItemCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextItemCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FactoryMethodTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PresentationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
     </list>
@@ -18,9 +27,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -42,15 +51,36 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.JabberPoint.executor": "Run",
+    "JUnit.BitmapItemTests.executor": "Run",
+    "JUnit.FactoryMethodTest.executor": "Run",
+    "JUnit.FactoryMethodTests.executor": "Run",
+    "JUnit.FactoryMethodTests.testAbstractFactoryThrowsException.executor": "Run",
+    "JUnit.FactoryMethodTests.testBitmapItemAttributes.executor": "Run",
+    "JUnit.FactoryMethodTests.testBitmapItemBoundingBox.executor": "Run",
+    "JUnit.FactoryMethodTests.testBitmapItemDrawWithMocks.executor": "Run",
+    "JUnit.FactoryMethodTests.testBitmapItemFactoryCreatesBitmapItem.executor": "Run",
+    "JUnit.FactoryMethodTests.testBitmapItemFactoryWithInvalidInput.executor": "Run",
+    "JUnit.FactoryMethodTests.testBitmapItemWithMockedBehavior.executor": "Run",
+    "JUnit.FactoryMethodTests.testConcreteFactoryReturnsBitmapItem.executor": "Run",
+    "JUnit.FactoryMethodTests.testConcreteFactoryReturnsTextItem.executor": "Run",
+    "JUnit.FactoryMethodTests.testFactoryWithInvalidInput.executor": "Run",
+    "JUnit.FactoryMethodTests.testSlideItemAttributes.executor": "Run",
+    "JUnit.FactoryMethodTests.testSlideUsesBitmapItem.executor": "Run",
     "JUnit.PresentationTest.executor": "Run",
     "JUnit.PresentationTest.testAppendAndGetSlide.executor": "Run",
     "JUnit.SetKeyCommandTest.executor": "Run",
+    "JUnit.SlideTest (1).executor": "Run",
     "JUnit.SlideTest.executor": "Run",
+    "JUnit.SlideTest.testAppendAndGetSlideItem.executor": "Debug",
+    "JUnit.SlideTest.testSlideUsesBitmapItem.executor": "Run",
+    "JUnit.TextItemTest.executor": "Run",
+    "JUnit.TextItemTest.testTextItemBoundingBox.executor": "Run",
+    "JUnit.TextItemTest.testTextItemDrawUsingRealGraphics.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "FactoryTests",
+    "git-widget-placeholder": "ALmostCOmplEteVerSion",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/test",
     "last_opened_file_path": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow_FactoryTest/test",
@@ -84,60 +114,60 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JabberPoint">
-    <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="JabberPoint" />
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+  <component name="RunManager" selected="JUnit.All in JabberPoint-IT-Meow">
+    <configuration name="All in JabberPoint-IT-Meow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+    <configuration name="FactoryMethodTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="MAIN_CLASS_NAME" value="FactoryMethodTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PresentationTest.testAppendAndGetSlide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+    <configuration name="TextItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
-      <option name="METHOD_NAME" value="testAppendAndGetSlide" />
+      <option name="MAIN_CLASS_NAME" value="TextItemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextItemTest.testTextItemBoundingBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TextItemTest" />
+      <option name="METHOD_NAME" value="testTextItemBoundingBox" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetKeyCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+    <configuration name="TextItemTest.testTextItemDrawUsingRealGraphics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SetKeyCommandTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SlideTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SlideTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="TextItemTest" />
+      <option name="METHOD_NAME" value="testTextItemDrawUsingRealGraphics" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JabberPoint" />
-        <item itemvalue="JUnit.PresentationTest" />
-        <item itemvalue="JUnit.SlideTest" />
-        <item itemvalue="JUnit.PresentationTest.testAppendAndGetSlide" />
-        <item itemvalue="JUnit.SetKeyCommandTest" />
+        <item itemvalue="JUnit.All in JabberPoint-IT-Meow" />
+        <item itemvalue="JUnit.TextItemTest.testTextItemBoundingBox" />
+        <item itemvalue="JUnit.TextItemTest.testTextItemDrawUsingRealGraphics" />
+        <item itemvalue="JUnit.TextItemTest" />
+        <item itemvalue="JUnit.FactoryMethodTest" />
       </list>
     </recent_temporary>
   </component>
@@ -163,5 +193,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Slide.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

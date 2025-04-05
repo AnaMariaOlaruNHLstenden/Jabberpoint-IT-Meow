@@ -32,25 +32,35 @@ public class BitmapItem extends SlideItem {
 		super(level);
 		imageName = name;
 		
-		// Check if the file extension is either .jpg, .jpeg, or .png
-		if (isValidImageExtension(imageName)) {
-			try {
-				bufferedImage = ImageIO.read(new File(imageName));
-				if (bufferedImage == null) {
-					System.err.println(FILE + imageName + " is not a valid image file.");
-				}
+		// Step 1: Null or empty check (early exit)
+		if (imageName == null || imageName.isEmpty()) {
+			throw new IllegalArgumentException("File name cannot be null or empty.");
+		}
+		
+		// Step 2: Validate file extension
+		if (!isValidImageExtension(imageName)) {
+			throw new IllegalArgumentException("Invalid file type for BitmapItem: " + imageName);
+		}
+		
+		// Step 3: Attempt to load the image file
+		try {
+			bufferedImage = ImageIO.read(new File(imageName));
+			if (bufferedImage == null) {
+				throw new IllegalArgumentException("Unable to load image: " + imageName);
 			}
-			catch (IOException e) {
-				System.err.println(FILE + imageName + NOTFOUND);
-			}
-		} else {
-			System.err.println(FILE + imageName + " is not a supported image format. Only .jpg, .jpeg, or .png files are allowed.");
+		} catch (IOException e) {
+			throw new IllegalArgumentException("Could not read the file: " + imageName, e);
 		}
 	}
 	
 	// Helper method to check if the file extension is valid
 	private boolean isValidImageExtension(String fileName) {
-		return fileName.toLowerCase().endsWith(".jpg") || fileName.toLowerCase().endsWith(".jpeg") || fileName.toLowerCase().endsWith(".png");
+		String lowerCaseFileName = fileName.toLowerCase();
+		return lowerCaseFileName.endsWith(".png")
+				|| lowerCaseFileName.endsWith(".jpg")
+				|| lowerCaseFileName.endsWith(".jpeg")
+				|| lowerCaseFileName.endsWith(".bmp")
+				|| lowerCaseFileName.endsWith(".gif");
 	}
 	
 	// give the filename of the image

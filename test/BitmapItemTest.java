@@ -7,7 +7,7 @@ import java.awt.image.ImageObserver;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class BitmapItemTests {
+class BitmapItemTest {
     
     @Test
     void testBitmapItemAttributes() {

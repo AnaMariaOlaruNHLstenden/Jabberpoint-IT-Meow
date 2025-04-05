@@ -24,25 +24,22 @@ public class BitmapItem extends SlideItem {
 	private BufferedImage bufferedImage;
 	private String imageName;
 	
-	protected static final String FILE = "File ";
-	protected static final String NOTFOUND = " not found";
-	
-	// level is equal to item-level; name is the name of the file with the Image
+	// level = item-level
 	public BitmapItem(int level, String name) {
 		super(level);
 		imageName = name;
 		
-		// Step 1: Null or empty check (early exit)
+		// Check if null or empty
 		if (imageName == null || imageName.isEmpty()) {
 			throw new IllegalArgumentException("File name cannot be null or empty.");
 		}
 		
-		// Step 2: Validate file extension
+		// Validate file extension
 		if (!isValidImageExtension(imageName)) {
 			throw new IllegalArgumentException("Invalid file type for BitmapItem: " + imageName);
 		}
 		
-		// Step 3: Attempt to load the image file
+		// Try to load image file
 		try {
 			bufferedImage = ImageIO.read(new File(imageName));
 			if (bufferedImage == null) {
@@ -53,7 +50,6 @@ public class BitmapItem extends SlideItem {
 		}
 	}
 	
-	// Helper method to check if the file extension is valid
 	private boolean isValidImageExtension(String fileName) {
 		String lowerCaseFileName = fileName.toLowerCase();
 		return lowerCaseFileName.endsWith(".png")
@@ -63,18 +59,17 @@ public class BitmapItem extends SlideItem {
 				|| lowerCaseFileName.endsWith(".gif");
 	}
 	
-	// give the filename of the image
 	public String getName() {
 		return imageName;
 	}
 	
-	// give the  bounding box of the image
+	@Override
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager) {
 		Style myStyle = styleManager.getStyle(getLevel());
 		return new Rectangle((int) (myStyle.getIndent() * scale), 0, (int) (bufferedImage.getWidth(observer) * scale), ((int) (myStyle.getLeading() * scale)) + (int) (bufferedImage.getHeight(observer) * scale));
 	}
 	
-	// draw the image
+	@Override
 	public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager) {
 		Style myStyle = styleManager.getStyle(getLevel());
 		int width = x + (int) (myStyle.getIndent() * scale);

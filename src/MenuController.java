@@ -3,13 +3,8 @@ import java.awt.Frame;
 import java.awt.Menu;
 import java.awt.MenuItem;
 import java.awt.MenuShortcut;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.swing.*;
 
 /** <p>The controller for the menu</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -23,13 +18,13 @@ import javax.swing.*;
 public class MenuController extends MenuBar
 {
 	
-	private Frame parent; // the frame, only used as parent for the Dialogs
-	private Presentation presentation; // Commands are given to the presentation
-	private Map<String,Command> commands; // Storing commands in a HashMap
+	private Frame parent;
+	private Presentation presentation; // Commands given to presentation
+	private Map<String,Command> commands;
 
-	private static final long serialVersionUID = 227L;
+	private static final long SERIAL_VERSION_UID = 227L;
 
-	//Those are to handle errors and alternatives
+	//Handle errors and alternatives
 	protected static final String TESTFILE = "test.xml";
 	protected static final String SAVEFILE = "dump.xml";
 	protected static final String IOEX = "IO Exception: ";

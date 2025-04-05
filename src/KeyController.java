@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class KeyController extends KeyAdapter implements KeyListener
 {
-	private Presentation presentation; // Commands are given to the presentation
+	private Presentation presentation; // Commands are given to presentation
 	private Frame parent;
 	private Map<Integer, Command> keyCommands; // Maps key codes to commands
 

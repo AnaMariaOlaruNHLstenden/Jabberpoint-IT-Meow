@@ -1,5 +1,4 @@
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
@@ -17,7 +16,7 @@ public class Slide implements Drawable, SlideComponent{
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
 	protected String title; // title is saved separately
-	protected Vector<SlideComponent> items; // slide items are saved in a Vector
+	protected Vector<SlideComponent> items;
 
 	public Slide() {
 		items = new Vector<SlideComponent>();
@@ -73,9 +72,5 @@ public class Slide implements Drawable, SlideComponent{
 			currentY += slideItem.getBoundingBox(g, observer, scale, styleManager).height;
 		}
 	}
-
-	// Give the scale for drawing
-	private float getScale(Rectangle area) {
-		return Math.min(((float)area.width) / ((float)WIDTH), ((float)area.height) / ((float)HEIGHT));
-	}
+	
 }

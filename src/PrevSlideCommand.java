@@ -1,5 +1,4 @@
-public class PrevSlideCommand extends Command
-{
+public class PrevSlideCommand extends Command{
 
     public PrevSlideCommand(Presentation presentation)
     {

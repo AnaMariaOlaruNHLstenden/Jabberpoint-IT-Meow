@@ -18,6 +18,7 @@ public class SaveCommand extends Command
         this.fileName = this.presentation.getTitle() + ".xml";
     }
 
+    // saves the presentation, as well as the date the command was executed
     @Override
     public void execute()
     {

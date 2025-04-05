@@ -28,19 +28,16 @@ public class TextItem extends SlideItem {
 	private String text;
 	
 	private static final String EMPTYTEXT = "No Text Given";
-
-// a textitem with specified level, with the text string
+	
 	public TextItem(int level, String string) {
 		super(level);
 		text = string;
 	}
-
-// give the text
+	
 	public String getText() {
 		return text == null ? "" : text;
 	}
-
-// geef de AttributedString voor het item
+	
 	public AttributedString getAttributedString(Style style, float scale) {
 		AttributedString attrStr = new AttributedString(getText());
 		attrStr.addAttribute(TextAttribute.FONT, style.getFont(scale), 0, text.length());

@@ -13,13 +13,13 @@ public enum MenuCommandKey
     SAVE("Save"),
     VIEW("View");
 
-    private final String label;
+    private final String LABEL;
 
     MenuCommandKey(String label) {
-        this.label = label;
+        this.LABEL = label;
     }
 
     public String getLabel() {
-        return label;
+        return LABEL;
     }
 }

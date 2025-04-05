@@ -24,16 +24,14 @@ public class GoToCommand extends Command
                 );
                 return;
             }
-
-            // Show input dialog with current valid range
+            
             String pageNumberStr = JOptionPane.showInputDialog(
                     parent,
                     "Enter slide number (1 - " + totalSlides + "):",
                     "Go To Slide",
                     JOptionPane.QUESTION_MESSAGE
             );
-
-            // Exit if user cancels the dialog
+            
             if (pageNumberStr == null) {
                 return;
             }
@@ -43,8 +41,8 @@ public class GoToCommand extends Command
 
                 // Validate slide number range
                 if (pageNumber >= 1 && pageNumber <= totalSlides) {
-                    presentation.setSlideNumber(pageNumber - 1); // Adjust for 0-based index
-                    return; // Exit loop on valid input
+                    presentation.setSlideNumber(pageNumber - 1);
+                    return;
                 } else {
                     JOptionPane.showMessageDialog(
                             parent,

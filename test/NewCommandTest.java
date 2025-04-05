@@ -1,7 +1,9 @@
+import Command.NewCommand;
+import FactoryMethodAndComposite.Presentation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
+
 import java.awt.Frame;
 
 public class NewCommandTest {

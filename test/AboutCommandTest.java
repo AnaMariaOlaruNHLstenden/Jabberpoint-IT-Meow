@@ -22,7 +22,7 @@ public class AboutCommandTest {
         aboutCommand.execute();
         
         // Then
-        assertTrue(TestAboutBox.wasShown(), "AboutBox should have been shown");
-        assertEquals(mockFrame, TestAboutBox.getLastFrame(), "AboutBox should have been shown with the correct frame");
+        assertTrue(TestAboutBox.wasShown(), "App.AboutBox should have been shown");
+        assertEquals(mockFrame, TestAboutBox.getLastFrame(), "App.AboutBox should have been shown with the correct frame");
     }
 }

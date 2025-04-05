@@ -1,3 +1,8 @@
+import FactoryMethodAndComposite.Slide;
+import FactoryMethodAndComposite.SlideComponent;
+import FactoryMethodAndComposite.SlideItem;
+import Style.Style;
+import Style.StyleManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -11,12 +16,12 @@ import java.util.Vector;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-// Dummy implementation of SlideComponent for testing purposes.
+// Dummy implementation of FactoryMethodAndComposite.SlideComponent for testing purposes.
 class DummySlideComponent implements SlideComponent {
     // No additional methods needed for non-UI testing.
 }
 
-// Dummy implementation of SlideItem for testing purposes.
+// Dummy implementation of FactoryMethodAndComposite.SlideItem for testing purposes.
 class DummySlideItem extends SlideItem
 {
     
@@ -35,8 +40,8 @@ class DummySlideItem extends SlideItem
     public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager)
     {
         return null;
-    } // Changed to SlideItem
-    // Implement any required methods from SlideItem interface
+    } // Changed to FactoryMethodAndComposite.SlideItem
+    // Implement any required methods from FactoryMethodAndComposite.SlideItem interface
 }
 
 public class SlideTest {

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE presentation SYSTEM "jabberpoint.dtd">
 <presentation>
-	<showtitle>XML-Based Presentation for Jabberpoint</showtitle>
+	<showtitle>XML-Based FactoryMethodAndComposite.Presentation for Jabberpoint</showtitle>
 	<slide>
-		<title>JabberPoint XML-Demo</title>
+		<title>App.JabberPoint XML-Demo</title>
 		<item kind="text"  level="1">Welkom to Jabberpoint</item>
 		<item kind="text"  level="2">Copyright (c) 1996-2000 Ian Darwin</item>
 		<item kind="text"  level="2">Rewritten by </item>
@@ -31,7 +31,7 @@
 		<item kind="image"  level="2">serclogo_fc.jpg</item>
 	</slide>
 	<slide>
-		<title>JabberPoint: Levels en styles</title>
+		<title>App.JabberPoint: Levels en styles</title>
 		<item kind="text"  level="1">Level 1</item>
 		<item kind="text"  level="2">Level 2</item>
 		<item kind="text"  level="1">A Jabberful Point</item>
@@ -45,7 +45,7 @@
 		<item kind="text"  level="2">Load presentation: File->Open</item>
 		<item kind="text"  level="1"> </item>
 		<item kind="text"  level="1">This is the end of the presentation!</item>
-		<item kind="image"  level="1">JabberPoint.gif</item>
+		<item kind="image"  level="1">App.JabberPoint.gif</item>
 		<item kind="text"  level="1">Goodbye!</item>
 	</slide>
 </presentation>

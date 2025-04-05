@@ -1,7 +1,8 @@
+import Command.NextSlideCommand;
+import FactoryMethodAndComposite.Presentation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class NextSlideCommandTest {
     private Presentation mockPresentation;

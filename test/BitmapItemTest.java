@@ -1,3 +1,7 @@
+import FactoryMethodAndComposite.BitmapItem;
+import FactoryMethodAndComposite.BitmapItemCreator;
+import FactoryMethodAndComposite.SlideItemFactory;
+import Style.StyleManager;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -11,25 +15,25 @@ class BitmapItemTest {
     
     @Test
     void testBitmapItemAttributes() {
-        // Arrange: Mock BitmapItem
+        // Arrange: Mock FactoryMethodAndComposite.BitmapItem
         BitmapItem mockBitmapItem = mock(BitmapItem.class);
         
         // Define behavior for mocked getters
         when(mockBitmapItem.getLevel()).thenReturn(1);
         when(mockBitmapItem.getName()).thenReturn("test-image.png");
         
-        // Act: Use the mocked BitmapItem
+        // Act: Use the mocked FactoryMethodAndComposite.BitmapItem
         int level = mockBitmapItem.getLevel();
         String name = mockBitmapItem.getName();
         
         // Assert
-        assertEquals(1, level, "BitmapItem level should be 1");
-        assertEquals("test-image.png", name, "BitmapItem name should match the input");
+        assertEquals(1, level, "FactoryMethodAndComposite.BitmapItem level should be 1");
+        assertEquals("test-image.png", name, "FactoryMethodAndComposite.BitmapItem name should match the input");
     }
     
     @Test
     void testBitmapItemWithMockedBehavior() {
-        // Mock BitmapItem
+        // Mock FactoryMethodAndComposite.BitmapItem
         BitmapItem mockedBitmapItem = Mockito.mock(BitmapItem.class);
         
         // Stub methods
@@ -49,7 +53,7 @@ class BitmapItemTest {
         ImageObserver mockObserver = Mockito.mock(ImageObserver.class);
         StyleManager mockStyleManager = Mockito.mock(StyleManager.class);
         
-        // Mock BitmapItem
+        // Mock FactoryMethodAndComposite.BitmapItem
         BitmapItem mockedBitmapItem = Mockito.mock(BitmapItem.class);
         
         // Call the method to verify interactions
@@ -67,7 +71,7 @@ class BitmapItemTest {
         ImageObserver mockObserver = Mockito.mock(ImageObserver.class);
         StyleManager mockStyleManager = Mockito.mock(StyleManager.class);
         
-        // Mock BitmapItem
+        // Mock FactoryMethodAndComposite.BitmapItem
         BitmapItem mockedBitmapItem = Mockito.mock(BitmapItem.class);
         Rectangle mockRectangle = new Rectangle(0, 0, 100, 50);
         
@@ -88,7 +92,7 @@ class BitmapItemTest {
     
     @Test
     void testBitmapItemFactoryWithInvalidInput() {
-        SlideItemFactory factory = new BitmapItemCreator(); // Factory to create BitmapItem instances
+        BitmapItemCreator factory = new BitmapItemCreator(); // Factory to create FactoryMethodAndComposite.BitmapItem instances
         
         // Null content (file name)
         IllegalArgumentException nullException = assertThrows(
@@ -98,7 +102,7 @@ class BitmapItemTest {
         assertEquals("File name cannot be null or empty.", nullException.getMessage(),
                 "Expected a validation message for null file names");
         
-        // Non-existent file (adjust test based on behavior—BitmapItem doesn't check file existence)
+        // Non-existent file (adjust test based on behavior—FactoryMethodAndComposite.BitmapItem doesn't check file existence)
         IllegalArgumentException nonExistentFileException = assertThrows(
                 IllegalArgumentException.class,
                 () -> factory.createSlideItem(2, "non-existent-file.png")
@@ -111,7 +115,7 @@ class BitmapItemTest {
                 IllegalArgumentException.class,
                 () -> factory.createSlideItem(3, "file.txt")
         );
-        assertEquals("Invalid file type for BitmapItem: file.txt", invalidExtensionException.getMessage(),
+        assertEquals("Invalid file type for FactoryMethodAndComposite.BitmapItem: file.txt", invalidExtensionException.getMessage(),
                 "Expected a validation message for invalid file extensions");
     }
    

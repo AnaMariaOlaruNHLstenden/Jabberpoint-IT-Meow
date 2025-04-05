@@ -1,8 +1,10 @@
+import Architecture.SlideViewerComponent;
+import FactoryMethodAndComposite.Presentation;
+import FactoryMethodAndComposite.Slide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import java.util.ArrayList;
 
 public class PresentationTest {
     private Presentation presentation;
@@ -25,7 +27,7 @@ public class PresentationTest {
     
     @Test
     public void testSetTitle() {
-        String expectedTitle = "My Test Presentation";
+        String expectedTitle = "My Test FactoryMethodAndComposite.Presentation";
         presentation.setTitle(expectedTitle);
         assertEquals(expectedTitle, presentation.getTitle());
     }

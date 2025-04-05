@@ -1,3 +1,8 @@
+import Architecture.SlideViewerComponent;
+import FactoryMethodAndComposite.Presentation;
+import FactoryMethodAndComposite.Slide;
+import FactoryMethodAndComposite.SlideComponent;
+import Style.StyleManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -34,13 +39,13 @@ class SlideViewerComponentTest {
     @Test
     void testUpdateWithValidSlide() {
         // Arrange
-        when(mockPresentation.getTitle()).thenReturn("Test Presentation");
+        when(mockPresentation.getTitle()).thenReturn("Test FactoryMethodAndComposite.Presentation");
 
         // Act
         slideViewerComponent.update(mockPresentation, mockSlide);
 
         // Assert
-        verify(mockFrame).setTitle("Test Presentation");
+        verify(mockFrame).setTitle("Test FactoryMethodAndComposite.Presentation");
     }
 
     @Test
@@ -70,7 +75,7 @@ class SlideViewerComponentTest {
         inOrder.verify(mockGraphics).fillRect(anyInt(), anyInt(), anyInt(), anyInt());
         inOrder.verify(mockGraphics).setFont(any(Font.class));
         inOrder.verify(mockGraphics).setColor(eq(Color.black)); // Text color
-        inOrder.verify(mockGraphics).drawString(eq("Slide 1 of 5"), anyInt(), anyInt());
+        inOrder.verify(mockGraphics).drawString(eq("FactoryMethodAndComposite.Slide 1 of 5"), anyInt(), anyInt());
     }
 
     @Test

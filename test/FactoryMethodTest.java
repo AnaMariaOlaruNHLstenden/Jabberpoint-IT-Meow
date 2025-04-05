@@ -3,6 +3,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
+import FactoryMethodAndComposite.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
@@ -32,7 +33,7 @@ public class FactoryMethodTest{
     
     @Test
     void testBitmapItemFactoryCreatesBitmapItem() {
-        // Mock BitmapItem to avoid file loading
+        // Mock FactoryMethodAndComposite.BitmapItem to avoid file loading
         try (MockedStatic<ImageIO> imageIOMock = Mockito.mockStatic(ImageIO.class)) {
             // Mock the ImageIO.read() call to return a dummy BufferedImage
             BufferedImage dummyImage = new BufferedImage(10, 10, BufferedImage.TYPE_INT_RGB);
@@ -41,16 +42,16 @@ public class FactoryMethodTest{
             // Arrange: Use the real factory
             BitmapItemCreator factory = new BitmapItemCreator();
             
-            // Act: Create a BitmapItem
+            // Act: Create a FactoryMethodAndComposite.BitmapItem
             SlideItem slideItem = factory.createSlideItem(1, "sample-image.png");
             
             // Assert: Check the properties of the created object
             assertNotNull(slideItem);
-            assertTrue(slideItem instanceof BitmapItem, "Factory should create a BitmapItem instance");
+            assertTrue(slideItem instanceof BitmapItem, "Factory should create a FactoryMethodAndComposite.BitmapItem instance");
             
             BitmapItem bitmapItem = (BitmapItem) slideItem;
-            assertEquals(1, bitmapItem.getLevel(), "BitmapItem level should be as specified");
-            assertEquals("sample-image.png", bitmapItem.getName(), "BitmapItem name should match the input");
+            assertEquals(1, bitmapItem.getLevel(), "FactoryMethodAndComposite.BitmapItem level should be as specified");
+            assertEquals("sample-image.png", bitmapItem.getName(), "FactoryMethodAndComposite.BitmapItem name should match the input");
         }
     }
     
@@ -58,7 +59,7 @@ public class FactoryMethodTest{
     void testAbstractFactoryThrowsException() {
         SlideItemFactory incompleteFactory = new SlideItemFactory() {
             @Override
-            SlideItem createSlideItem(int level, String content) {
+            public SlideItem createSlideItem(int level, String content) {
                 throw new UnsupportedOperationException("Abstract implementation should not create items.");
             }
         };
@@ -70,28 +71,28 @@ public class FactoryMethodTest{
     
     @Test
     void testConcreteFactoryReturnsTextItem() {
-        SlideItemFactory factory = new TextItemCreator();
+        TextItemCreator factory = new TextItemCreator();
         SlideItem slideItem = factory.createSlideItem(2, "Sample Text");
         
         assertNotNull(slideItem, "The factory should return a valid item.");
-        assertTrue(slideItem instanceof TextItem, "Expected factory to create a TextItem instance.");
+        assertTrue(slideItem instanceof TextItem, "Expected factory to create a FactoryMethodAndComposite.TextItem instance.");
         assertEquals(2, slideItem.getLevel(), "The level should match the provided value.");
     }
     
     @Test
     void testConcreteFactoryReturnsBitmapItem() {
-        // Arrange: Mock BitmapItem
+        // Arrange: Mock FactoryMethodAndComposite.BitmapItem
         BitmapItem mockBitmapItem = mock(BitmapItem.class);
         
-        // Mock the BitmapItemCreator to return the mockBitmapItem
+        // Mock the FactoryMethodAndComposite.BitmapItemCreator to return the mockBitmapItem
         BitmapItemCreator factory = mock(BitmapItemCreator.class);
         when(factory.createSlideItem(anyInt(), anyString())).thenReturn(mockBitmapItem);
         
         // Act: Use the mock factory
         SlideItem slideItem = factory.createSlideItem(1, "test-image.png");
         
-        // Assert: Ensure the factory returns a BitmapItem
+        // Assert: Ensure the factory returns a FactoryMethodAndComposite.BitmapItem
         assertNotNull(slideItem);
-        assertTrue(slideItem instanceof BitmapItem, "Factory should return an instance of BitmapItem");
+        assertTrue(slideItem instanceof BitmapItem, "Factory should return an instance of FactoryMethodAndComposite.BitmapItem");
     }
 }

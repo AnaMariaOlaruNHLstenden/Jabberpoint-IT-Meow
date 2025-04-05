@@ -1,10 +1,11 @@
+import Command.Command;
+import FactoryMethodAndComposite.Presentation;
+import Command.MenuController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MenuControllerTest {
     private Frame mockFrame;
@@ -85,7 +86,7 @@ public class MenuControllerTest {
         TestAboutCommand testAboutCommand = new TestAboutCommand(mockFrame);
         menuController.setCommand("About", testAboutCommand);
         menuController.executeCommand("About");
-        assertTrue(TestAboutBox.wasShown(), "AboutBox should have been shown");
-        assertEquals(mockFrame, TestAboutBox.getLastFrame(), "AboutBox should have been shown with the correct frame");
+        assertTrue(TestAboutBox.wasShown(), "App.AboutBox should have been shown");
+        assertEquals(mockFrame, TestAboutBox.getLastFrame(), "App.AboutBox should have been shown with the correct frame");
     }
 } 

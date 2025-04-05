@@ -6,9 +6,91 @@
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TextItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabberpoint.dtd" beforeDir="false" afterPath="$PROJECT_DIR$/jabberpoint.dtd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AboutBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/AboutBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AboutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/AboutCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Accessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/BitmapItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BitmapItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/BitmapItemCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DemoPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/DemoPresentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Architecture/Drawable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GoToCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/GoToCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/JabberPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KeyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/KeyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuCommandKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/MenuCommandKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/NewCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NextSlideCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/NextSlideCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/OpenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/Presentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrevSlideCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/PrevSlideCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/SlideComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/SlideItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/SlideItemFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Architecture/SlideViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Architecture/SlideViewerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideViewerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Architecture/SlideViewerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StyleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style/StyleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/TextItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoryMethodAndComposite/TextItemCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/XMLAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AboutBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AboutCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Accessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BitmapItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BitmapItemCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DemoPresentation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Drawable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ExitCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GoToCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JabberPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/KeyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MenuCommandKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NewCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NextSlideCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OpenCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Presentation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PrevSlideCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SaveCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Slide.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SlideComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SlideItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SlideItemFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SlideViewerFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/StyleManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TextItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TextItemCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/XMLAccessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AboutCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AboutCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BitmapItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BitmapItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ExitCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ExitCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FactoryMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FactoryMethodTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GoToCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GoToCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MenuControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/NewCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/NewCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/NextSlideCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/NextSlideCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/OpenCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OpenCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PresentationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PrevSlideCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PrevSlideCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SaveCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SaveCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SetKeyCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SetKeyCommandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SlideViewerComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideViewerComponentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SlideViewerFrameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideViewerFrameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/StyleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StyleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestAboutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestAboutCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TextItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TextItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +147,9 @@
     "JUnit.FactoryMethodTests.testSlideUsesBitmapItem.executor": "Run",
     "JUnit.GoToCommandTest.executor": "Run",
     "JUnit.KeyControllerTest.executor": "Run",
+    "JUnit.MenuControllerTest.testConstructor_InitializesCommands.executor": "Run",
     "JUnit.OpenCommandTest.executor": "Run",
+    "JUnit.OpenCommandTest.testExecute_SuccessfulLoad.executor": "Run",
     "JUnit.PresentationTest.executor": "Run",
     "JUnit.PresentationTest.testAppendAndGetSlide.executor": "Run",
     "JUnit.PresentationTest.testEmptyPresentationBehavior.executor": "Run",
@@ -80,6 +164,7 @@
     "JUnit.TextItemTest.executor": "Run",
     "JUnit.TextItemTest.testTextItemBoundingBox.executor": "Run",
     "JUnit.TextItemTest.testTextItemDrawUsingRealGraphics.executor": "Run",
+    "JUnit.test in JabberPoint-IT-Meow.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -115,60 +200,65 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Command" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in JabberPoint-IT-Meow">
+  <component name="RunManager" selected="JUnit.test in JabberPoint-IT-Meow">
     <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JabberPoint" />
+      <option name="MAIN_CLASS_NAME" value="App.JabberPoint" />
       <module name="JabberPoint-IT-Meow" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in JabberPoint-IT-Meow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MenuControllerTest.testConstructor_InitializesCommands" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="MenuControllerTest" />
+      <option name="METHOD_NAME" value="testConstructor_InitializesCommands" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KeyControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OpenCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="KeyControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="OpenCommandTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OpenCommandTest.testExecute_SuccessfulLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="OpenCommandTest" />
+      <option name="METHOD_NAME" value="testExecute_SuccessfulLoad" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlideTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test in JabberPoint-IT-Meow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SlideTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in JabberPoint-IT-Meow" />
-        <item itemvalue="JUnit.SlideTest" />
+        <item itemvalue="JUnit.test in JabberPoint-IT-Meow" />
         <item itemvalue="Application.JabberPoint" />
-        <item itemvalue="JUnit.KeyControllerTest" />
-        <item itemvalue="JUnit.PresentationTest" />
+        <item itemvalue="JUnit.OpenCommandTest" />
+        <item itemvalue="JUnit.MenuControllerTest.testConstructor_InitializesCommands" />
+        <item itemvalue="JUnit.OpenCommandTest.testExecute_SuccessfulLoad" />
       </list>
     </recent_temporary>
   </component>
@@ -198,5 +288,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$All_in_JabberPoint_IT_Meow.ic" NAME="All in JabberPoint-IT-Meow Coverage Results" MODIFIED="1743872368640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$JabberPoint.ic" NAME="JabberPoint Coverage Results" MODIFIED="1743849870459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$test_in_JabberPoint_IT_Meow.ic" NAME="test in JabberPoint-IT-Meow Coverage Results" MODIFIED="1743879805296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

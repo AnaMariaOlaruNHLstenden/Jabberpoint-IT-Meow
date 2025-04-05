@@ -1,8 +1,10 @@
+import App.XMLAccessor;
+import Command.SaveCommand;
+import FactoryMethodAndComposite.Presentation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
-import javax.swing.JOptionPane;
+
 import java.awt.Frame;
 import java.io.IOException;
 

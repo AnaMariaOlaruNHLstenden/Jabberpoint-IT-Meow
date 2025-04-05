@@ -1,3 +1,6 @@
+import Command.Command;
+import FactoryMethodAndComposite.Presentation;
+import Command.KeyController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
@@ -54,12 +57,12 @@ class KeyControllerTest {
         // Test some default key bindings
         KeyEvent nextKeyEvent = new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_PAGE_DOWN, (char) KeyEvent.VK_PAGE_DOWN);
         keyController.keyPressed(nextKeyEvent);
-        // The NextSlideCommand should have been executed on the presentation
+        // The Command.NextSlideCommand should have been executed on the presentation
         verify(mockPresentation, times(1)).nextSlide();
         
         KeyEvent prevKeyEvent = new KeyEvent(mockFrame, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_PAGE_UP, (char) KeyEvent.VK_PAGE_UP);
         keyController.keyPressed(prevKeyEvent);
-        // The PrevSlideCommand should have been executed on the presentation
+        // The Command.PrevSlideCommand should have been executed on the presentation
         verify(mockPresentation, times(1)).prevSlide();
     }
     

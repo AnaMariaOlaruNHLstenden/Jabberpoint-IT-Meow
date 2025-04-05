@@ -1,22 +1,25 @@
+import FactoryMethodAndComposite.SlideItem;
+import FactoryMethodAndComposite.SlideItemFactory;
+import FactoryMethodAndComposite.TextItem;
+import FactoryMethodAndComposite.TextItemCreator;
+import Style.*;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
 
 class TextItemTest{
     
     @Test
     void testTextItemAttributes() {
-        SlideItemFactory factory = new TextItemCreator();
+        TextItemCreator factory = new TextItemCreator();
         SlideItem slideItem = factory.createSlideItem(3, "Test Content");
         
         assertEquals(3, slideItem.getLevel());
-        assertEquals("Test Content", ((TextItem)slideItem).getText(), "TextItem should store the correct content.");
+        assertEquals("Test Content", ((TextItem)slideItem).getText(), "FactoryMethodAndComposite.TextItem should store the correct content.");
     }
     
     @Test
@@ -29,7 +32,7 @@ class TextItemTest{
         graphics.setColor(Color.WHITE);
         graphics.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         
-        // Create a TextItem instance
+        // Create a FactoryMethodAndComposite.TextItem instance
         TextItem textItem = new TextItem(1, "Hello, World!");
         StyleManager styleManager = new StyleManager();
         
@@ -67,10 +70,10 @@ class TextItemTest{
         BufferedImage tempImage = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
         Graphics2D graphics = tempImage.createGraphics();
         
-        // Create StyleManager with real styles
+        // Create Style.StyleManager with real styles
         StyleManager styleManager = new StyleManager();
         
-        // Create a TextItem with test content
+        // Create a FactoryMethodAndComposite.TextItem with test content
         TextItem textItem = new TextItem(1, "Test Content");
         
         // Act: Call getBoundingBox() with real objects
@@ -89,7 +92,7 @@ class TextItemTest{
     
     @Test
     void testTextItemFactoryWithInvalidInput() {
-        SlideItemFactory factory = new TextItemCreator();
+        TextItemCreator factory = new TextItemCreator();
         
         // Test null input
         assertThrows(IllegalArgumentException.class, () -> factory.createSlideItem(1, null));

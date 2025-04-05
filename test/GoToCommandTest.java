@@ -1,9 +1,10 @@
+import Command.GoToCommand;
+import FactoryMethodAndComposite.Presentation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockedStatic;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
+
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 
@@ -36,7 +37,7 @@ public class GoToCommandTest {
                     JOptionPane.showMessageDialog(
                             eq(mockFrame),
                             eq("There are no slides in the presentation."),
-                            eq("Empty Presentation"),
+                            eq("Empty FactoryMethodAndComposite.Presentation"),
                             eq(JOptionPane.INFORMATION_MESSAGE)
                     )
             );

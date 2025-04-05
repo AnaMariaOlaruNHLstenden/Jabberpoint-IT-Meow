@@ -1,9 +1,12 @@
+import Architecture.SlideViewerComponent;
+import Architecture.SlideViewerFrame;
+import FactoryMethodAndComposite.Presentation;
+import Style.StyleManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import javax.swing.*;
 import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,7 +56,7 @@ class SlideViewerFrameTest {
 
     @Test
     void testPresentationShowViewIsSet() {
-        // Verify that the presentation's show view was set with a SlideViewerComponent
+        // Verify that the presentation's show view was set with a Architecture.SlideViewerComponent
         verify(mockPresentation).setShowView(any(SlideViewerComponent.class));
     }
 } 

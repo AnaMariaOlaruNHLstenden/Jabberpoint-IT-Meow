@@ -73,4 +73,24 @@ public class SlideTest {
         verify(mockSlide, times(1)).append(mockBitmapItem);
         assertEquals("test-image.png", mockBitmapItem.getName(), "BitmapItem name should match the input");
     }
+    
+    @Test
+    void testSlideUsesTextItem() {
+        // Arrange: Mock Slide and TextItem
+        Slide mockSlide = mock(Slide.class);
+        TextItem mockTextItem = mock(TextItem.class);
+        
+        // Define mocked behavior for TextItem
+        when(mockTextItem.getText()).thenReturn("Sample text for testing");
+        
+        // Use the mock in the Slide object
+        doNothing().when(mockSlide).append(any(SlideItem.class));
+        
+        // Act: Add the mocked TextItem to the slide
+        mockSlide.append(mockTextItem);
+        
+        // Verify the interaction
+        verify(mockSlide, times(1)).append(mockTextItem);
+        assertEquals("Sample text for testing", mockTextItem.getText(), "TextItem text should match the input");
+    }
 }

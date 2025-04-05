@@ -5,6 +5,12 @@ import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class FactoryMethodTest{
     private SlideItemFactory textFactory;
@@ -26,19 +32,26 @@ public class FactoryMethodTest{
     
     @Test
     void testBitmapItemFactoryCreatesBitmapItem() {
-        // Arrange: Use the real factory (not a spy)
-        BitmapItemCreator factory = new BitmapItemCreator();
-        
-        // Act: Create a BitmapItem
-        SlideItem slideItem = factory.createSlideItem(1, "sample-image.png");
-        
-        // Assert: Check the properties of the created object
-        assertNotNull(slideItem);
-        assertTrue(slideItem instanceof BitmapItem, "Factory should create a BitmapItem instance");
-        
-        BitmapItem bitmapItem = (BitmapItem) slideItem;
-        assertEquals(1, bitmapItem.getLevel(), "BitmapItem level should be as specified");
-        assertEquals("sample-image.png", bitmapItem.getName(), "BitmapItem name should match the input");
+        // Mock BitmapItem to avoid file loading
+        try (MockedStatic<ImageIO> imageIOMock = Mockito.mockStatic(ImageIO.class)) {
+            // Mock the ImageIO.read() call to return a dummy BufferedImage
+            BufferedImage dummyImage = new BufferedImage(10, 10, BufferedImage.TYPE_INT_RGB);
+            imageIOMock.when(() -> ImageIO.read(any(File.class))).thenReturn(dummyImage);
+            
+            // Arrange: Use the real factory
+            BitmapItemCreator factory = new BitmapItemCreator();
+            
+            // Act: Create a BitmapItem
+            SlideItem slideItem = factory.createSlideItem(1, "sample-image.png");
+            
+            // Assert: Check the properties of the created object
+            assertNotNull(slideItem);
+            assertTrue(slideItem instanceof BitmapItem, "Factory should create a BitmapItem instance");
+            
+            BitmapItem bitmapItem = (BitmapItem) slideItem;
+            assertEquals(1, bitmapItem.getLevel(), "BitmapItem level should be as specified");
+            assertEquals("sample-image.png", bitmapItem.getName(), "BitmapItem name should match the input");
+        }
     }
     
     @Test

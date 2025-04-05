@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dump.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SaveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SaveCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BitmapItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BitmapItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FactoryMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FactoryMethodTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TextItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TextItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +42,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.JabberPoint.executor": "Run",
+    "Application.JabberPoint.executor": "Coverage",
     "JUnit.All in JabberPoint-IT-Meow.executor": "Coverage",
     "JUnit.BitmapItemTests.executor": "Run",
     "JUnit.FactoryMethodTest.executor": "Run",
+    "JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItem.executor": "Run",
+    "JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile.executor": "Run",
     "JUnit.FactoryMethodTests.executor": "Run",
     "JUnit.FactoryMethodTests.testAbstractFactoryThrowsException.executor": "Run",
     "JUnit.FactoryMethodTests.testBitmapItemAttributes.executor": "Run",
@@ -67,6 +68,7 @@
     "JUnit.SlideTest.executor": "Run",
     "JUnit.SlideTest.testAppendAndGetSlideItem.executor": "Debug",
     "JUnit.SlideTest.testSlideUsesBitmapItem.executor": "Run",
+    "JUnit.SlideTest.testSlideUsesTextItem.executor": "Run",
     "JUnit.TextItemTest.executor": "Run",
     "JUnit.TextItemTest.testTextItemBoundingBox.executor": "Run",
     "JUnit.TextItemTest.testTextItemDrawUsingRealGraphics.executor": "Run",
@@ -108,14 +110,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JabberPoint">
-    <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JabberPoint" />
-      <module name="JabberPoint-IT-Meow" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.All in JabberPoint-IT-Meow">
     <configuration name="All in JabberPoint-IT-Meow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
@@ -124,11 +119,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TextItemTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="FactoryMethodTest" />
+      <option name="METHOD_NAME" value="testBitmapItemFactoryCreatesBitmapItem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FactoryMethodTest" />
+      <option name="METHOD_NAME" value="testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JabberPoint" />
         <item itemvalue="JUnit.All in JabberPoint-IT-Meow" />
         <item itemvalue="JUnit.TextItemTest.testTextItemBoundingBox" />
         <item itemvalue="JUnit.TextItemTest.testTextItemDrawUsingRealGraphics" />
-        <item itemvalue="JUnit.TextItemTest" />
+        <item itemvalue="JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItem" />
+        <item itemvalue="JUnit.FactoryMethodTest.testBitmapItemFactoryCreatesBitmapItemAndSavesItToFile" />
       </list>
     </recent_temporary>
   </component>
@@ -198,6 +204,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$All_in_JabberPoint_IT_Meow.ic" NAME="All in JabberPoint-IT-Meow Coverage Results" MODIFIED="1743814415804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$All_in_JabberPoint_IT_Meow.ic" NAME="All in JabberPoint-IT-Meow Coverage Results" MODIFIED="1743852883336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Jabberpoint_IT_Meow$JabberPoint.ic" NAME="JabberPoint Coverage Results" MODIFIED="1743849870459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

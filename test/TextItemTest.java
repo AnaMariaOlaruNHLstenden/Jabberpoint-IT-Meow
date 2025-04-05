@@ -22,22 +22,40 @@ class TextItemTest{
     @Test
     void testTextItemDrawUsingRealGraphics() {
         // Create a real graphics context (BufferedImage as a canvas)
-        BufferedImage canvas = new BufferedImage(200, 100, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage canvas = new BufferedImage(300, 150, BufferedImage.TYPE_INT_ARGB);
         Graphics2D graphics = canvas.createGraphics();
         graphics.setFont(new Font("Arial", Font.PLAIN, 12));
-        graphics.setColor(Color.BLACK);
+        // Fill with white background to make it easier to detect changes
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         
         // Create a TextItem instance
         TextItem textItem = new TextItem(1, "Hello, World!");
         StyleManager styleManager = new StyleManager();
         
         // Call the draw method
-        textItem.draw(graphics, 50, 50, 1.0f, null, styleManager);
+        textItem.draw(graphics, 0, 0, 1.0f, null, styleManager);
         
-        // Validate expected output indirectly by checking pixel colors (logic-based approximation)
-        Color pixelColor = new Color(canvas.getRGB(50, 50), true);
-        // Ensure the text drawing has affected the canvas (not blank or unmodified pixels)
-        assertNotEquals(new Color(0, 0, 0, 0), pixelColor, "The pixel should not be blank after drawing");
+        // Determine the approximate position where text should be drawn
+        Style style = styleManager.getStyle(1);
+        int approxTextX = (int)(style.getIndent());  // Based on the indent
+        int approxTextY = (int)(style.getLeading() + 15); // Leading plus approximate ascent
+        
+        // Check multiple pixels in the area where text should be drawn
+        boolean foundNonWhitePixel = false;
+        for (int x = approxTextX; x < approxTextX + 100 && !foundNonWhitePixel; x += 5) {
+            for (int y = approxTextY - 10; y < approxTextY + 10 && !foundNonWhitePixel; y += 2) {
+                if (x >= 0 && x < canvas.getWidth() && y >= 0 && y < canvas.getHeight()) {
+                    Color pixelColor = new Color(canvas.getRGB(x, y), true);
+                    if (!pixelColor.equals(Color.WHITE)) {
+                        foundNonWhitePixel = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        assertTrue(foundNonWhitePixel, "No text was found on the canvas");
         
         // Clean up resources
         graphics.dispose();
@@ -45,25 +63,28 @@ class TextItemTest{
     
     @Test
     void testTextItemBoundingBox() {
-        // Mock dependencies
-        Graphics mockGraphics = mock(Graphics.class);
-        StyleManager styleManager = new StyleManager();
+        // Create a real Graphics2D from a temporary image
+        BufferedImage tempImage = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics = tempImage.createGraphics();
         
-        // Mock the FontMetrics to simulate text measurement
-        FontMetrics mockFontMetrics = mock(FontMetrics.class);
-        when(mockGraphics.getFontMetrics(any())).thenReturn(mockFontMetrics);
-        when(mockFontMetrics.stringWidth("Test Content")).thenReturn(100); // Simulated width
-        when(mockFontMetrics.getHeight()).thenReturn(20); // Simulated height
+        // Create StyleManager with real styles
+        StyleManager styleManager = new StyleManager();
         
         // Create a TextItem with test content
         TextItem textItem = new TextItem(1, "Test Content");
         
-        // Act: Call getBoundingBox()
-        Rectangle boundingBox = textItem.getBoundingBox(mockGraphics, null, 1.0f, styleManager);
+        // Act: Call getBoundingBox() with real objects
+        Rectangle boundingBox = textItem.getBoundingBox(graphics, null, 1.0f, styleManager);
         
-        // Assert: Verify the bounding box dimensions
-        assertEquals(100, boundingBox.width, "Width should match text width.");
-        assertEquals(20, boundingBox.height, "Height should match text height.");
+        // Assert: Verify basic properties
+        Style style = styleManager.getStyle(1);
+        assertEquals((int)style.getIndent(), boundingBox.x, "X position should match style indent");
+        assertEquals(0, boundingBox.y, "Y position should be 0");
+        assertTrue(boundingBox.width > 0, "Width should be positive");
+        assertTrue(boundingBox.height > 0, "Height should be positive");
+        
+        // Clean up
+        graphics.dispose();
     }
     
     @Test

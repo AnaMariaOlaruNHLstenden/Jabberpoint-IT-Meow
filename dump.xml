@@ -1,51 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE presentation SYSTEM "jabberpoint.dtd">
 <presentation>
-<showtitle>XML-Based Presentation for Jabberpoint</showtitle>
-<slide>
-<title>JabberPoint XML-Demo</title>
-<item kind="text" level="1">Welkom to Jabberpoint</item>
-<item kind="text" level="2">Copyright (c) 1996-2000 Ian Darwin</item>
-<item kind="text" level="2">Rewritten by </item>
-<item kind="text" level="2">Gert Florijn, Mark van Elswijk, Marc Evers</item>
-<item kind="text" level="2">and Sylvia Stuurman</item>
-<item kind="text" level="1">Navigation:</item>
-<item kind="text" level="2">Next slide: PgDn or Enter</item>
-<item kind="text" level="2">Previous slide: PgUp or up-arrow</item>
-<item kind="text" level="2">Quit: q or Q</item>
-</slide>
-<slide>
-<title>An almost empty slide</title>
-<item kind="text" level="1"> </item>
-</slide>
-<slide>
-<title>Achtergrond</title>
-<item kind="text" level="1">Jabberpoint is an exercise for the</item>
-<item kind="text" level="1">course Software Quality from NHL Stenden</item>
-<item kind="text" level="1"> </item>
-<item kind="image" level="2">logo-woordmerk_ou.gif</item>
-<item kind="text" level="1"> </item>
-<item kind="text" level="1">This exersice is developed by the SERC</item>
-<item kind="text" level="1">in collaboration with the Open universiteit </item>
-<item kind="text" level="1"> </item>
-<item kind="image" level="2">serclogo_fc.jpg</item>
-</slide>
-<slide>
-<title>JabberPoint: Levels en styles</title>
-<item kind="text" level="1">Level 1</item>
-<item kind="text" level="2">Level 2</item>
-<item kind="text" level="1">A Jabberful Point</item>
-<item kind="text" level="2">Level 2 has style 2</item>
-<item kind="text" level="3">This is how level 3 style looks like</item>
-<item kind="text" level="4">And this is level 4</item>
-</slide>
-<slide>
-<title>Laatste slide</title>
-<item kind="text" level="1">Navigation also can be done through the menu</item>
-<item kind="text" level="2">Load presentation: File->Open</item>
-<item kind="text" level="1"> </item>
-<item kind="text" level="1">This is the end of the presentation!</item>
-<item kind="image" level="1">JabberPoint.gif</item>
-<item kind="text" level="1">Goodbye!</item>
-</slide>
+<showtitle>null</showtitle>
 </presentation>

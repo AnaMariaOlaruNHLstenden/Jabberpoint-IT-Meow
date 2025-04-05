@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="872f877f-7865-40f6-a1f5-3e8df7f84b14" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PresentationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PresentationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SlideTest.java" afterDir="false" />
     </list>
@@ -42,15 +43,18 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.JabberPoint.executor": "Run",
+    "JUnit.FactoryMethodTests.executor": "Run",
     "JUnit.PresentationTest.executor": "Run",
     "JUnit.PresentationTest.testAppendAndGetSlide.executor": "Run",
     "JUnit.SetKeyCommandTest.executor": "Run",
+    "JUnit.SlideTest (1).executor": "Run",
     "JUnit.SlideTest.executor": "Run",
+    "JUnit.SlideTest.testAppendAndGetSlideItem.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "FactoryTests",
+    "git-widget-placeholder": "ALmostCOmplEteVerSion",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow/test",
     "last_opened_file_path": "B:/School 23-24/YEAR 2/Period 3/Software Quality/Third attempt/Jabberpoint-IT-Meow_FactoryTest/test",
@@ -84,7 +88,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JabberPoint">
+  <component name="RunManager" selected="JUnit.SetKeyCommandTest">
     <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -94,27 +98,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+    <configuration name="FactoryMethodTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
+      <option name="MAIN_CLASS_NAME" value="FactoryMethodTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PresentationTest.testAppendAndGetSlide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
-      <option name="METHOD_NAME" value="testAppendAndGetSlide" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SetKeyCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+      <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SetKeyCommandTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -122,8 +116,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlideTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JabberPoint-IT-Meow_WithMaven" />
+    <configuration name="SlideTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SlideTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -131,13 +125,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SlideTest.testAppendAndGetSlideItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JabberPoint-IT-Meow" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SlideTest" />
+      <option name="METHOD_NAME" value="testAppendAndGetSlideItem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JabberPoint" />
-        <item itemvalue="JUnit.PresentationTest" />
-        <item itemvalue="JUnit.SlideTest" />
-        <item itemvalue="JUnit.PresentationTest.testAppendAndGetSlide" />
         <item itemvalue="JUnit.SetKeyCommandTest" />
+        <item itemvalue="JUnit.FactoryMethodTests" />
+        <item itemvalue="JUnit.SlideTest (1)" />
+        <item itemvalue="JUnit.SlideTest.testAppendAndGetSlideItem" />
+        <item itemvalue="Application.JabberPoint" />
       </list>
     </recent_temporary>
   </component>
@@ -163,5 +167,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Slide.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

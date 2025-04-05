@@ -1,6 +1,10 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.awt.*;
+import java.awt.font.FontRenderContext;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
@@ -15,18 +19,18 @@ class DummySlideComponent implements SlideComponent {
 // Dummy implementation of SlideItem for testing purposes.
 class DummySlideItem extends SlideItem
 {
-
+    
     public DummySlideItem(int lev)
     {
         super(lev);
     }
-
+    
     @Override
     public void draw(Graphics g, int x, int y, float scale, ImageObserver observer, StyleManager styleManager)
     {
-
+    
     }
-
+    
     @Override
     public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, StyleManager styleManager)
     {
@@ -36,86 +40,106 @@ class DummySlideItem extends SlideItem
 }
 
 public class SlideTest {
-
+    @Mock
+    private Graphics2D mockGraphics;
+    @Mock
+    private ImageObserver mockObserver;
+    @Mock
+    private StyleManager mockStyleManager;
+    @Mock
+    private Style mockStyle;
+    @Mock
+    private SlideItem mockSlideItem;
+    
+    private Slide slide;
+    
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        slide = new Slide();
+        
+        when(mockStyleManager.getStyle(anyInt())).thenReturn(mockStyle);
+        when(mockStyle.getLeading()).thenReturn(10);
+        when(mockStyle.getFont(anyFloat())).thenReturn(new Font("Dialog", Font.PLAIN, 12));
+        when(mockGraphics.getFontRenderContext()).thenReturn(new FontRenderContext(null, true, true));
+        
+        // Setup mock slide item behavior
+        when(mockSlideItem.getBoundingBox(any(), any(), anyFloat(), any()))
+                .thenReturn(new Rectangle(0, 0, 100, 20));
+    }
+    
     @Test
-    public void testTitleMethods() {
-        Slide slide = new Slide();
+    void testTitleMethods() {
         assertNull(slide.getTitle());
         slide.setTitle("Test Title");
         assertEquals("Test Title", slide.getTitle());
     }
-
+    
     @Test
-    public void testAppendAndGetSlideItem() {
-        Slide slide = new Slide();
-        DummySlideItem item1 = new DummySlideItem(1);
-        DummySlideItem item2 = new DummySlideItem(2);
-
-        // Append dummy slide components.
-        slide.append(item1);
-        slide.append(item2);
-
-        // Verify that the size of the slide is updated.
-        assertEquals(2, slide.getSize());
-        // Verify that the correct items are retrieved.
-        assertEquals(item1, slide.getSlideItem(0));
-        assertEquals(item2, slide.getSlideItem(1));
+    void testAppendAndGetSlideItem() {
+        when(mockSlideItem.getLevel()).thenReturn(1);
+        
+        slide.append(mockSlideItem);
+        assertEquals(1, slide.getSize());
+        assertEquals(mockSlideItem, slide.getSlideItem(0));
     }
-
+    
     @Test
-    public void testGetSlideItems() {
-        Slide slide = new Slide();
-        // Initially, the slide items Vector should be empty.
+    void testGetSlideItems() {
+        assertTrue(slide.getSlideItems().isEmpty());
+        
+        slide.append(mockSlideItem);
         Vector<SlideComponent> items = slide.getSlideItems();
-        assertNotNull(items);
-        assertTrue(items.isEmpty());
-
-        // Append an item and verify the vector updates.
-        DummySlideComponent item = new DummySlideComponent();
-        slide.append(item);
-        items = slide.getSlideItems();
+        
         assertEquals(1, items.size());
-        assertEquals(item, items.get(0));
+        assertEquals(mockSlideItem, items.get(0));
     }
     
     @Test
-    void testSlideUsesBitmapItem() {
-        // Arrange: Mock Slide and BitmapItem
-        Slide mockSlide = mock(Slide.class);
-        BitmapItem mockBitmapItem = mock(BitmapItem.class);
+    void testDrawWithItems() {
+        slide.setTitle("Test Title");
         
-        // Define mocked behavior for BitmapItem
-        when(mockBitmapItem.getName()).thenReturn("test-image.png");
+        // Add multiple items
+        slide.append(mockSlideItem);
+        slide.append(mockSlideItem);
         
-        // Use the mock in the Slide object
-        doNothing().when(mockSlide).append(any(SlideItem.class));
+        slide.draw(mockGraphics, 0, 0, 1.0f, mockObserver, mockStyleManager);
         
-        // Act: Add the mocked BitmapItem to the slide
-        mockSlide.append(mockBitmapItem);
-        
-        // Verify the interaction
-        verify(mockSlide, times(1)).append(mockBitmapItem);
-        assertEquals("test-image.png", mockBitmapItem.getName(), "BitmapItem name should match the input");
+        // Verify items were drawn
+        verify(mockSlideItem, times(2)).draw(
+                eq(mockGraphics),
+                anyInt(),
+                anyInt(),
+                eq(1.0f),
+                eq(mockObserver),
+                eq(mockStyleManager)
+        );
     }
     
     @Test
-    void testSlideUsesTextItem() {
-        // Arrange: Mock Slide and TextItem
-        Slide mockSlide = mock(Slide.class);
-        TextItem mockTextItem = mock(TextItem.class);
-        
-        // Define mocked behavior for TextItem
-        when(mockTextItem.getText()).thenReturn("Sample text for testing");
-        
-        // Use the mock in the Slide object
-        doNothing().when(mockSlide).append(any(SlideItem.class));
-        
-        // Act: Add the mocked TextItem to the slide
-        mockSlide.append(mockTextItem);
-        
-        // Verify the interaction
-        verify(mockSlide, times(1)).append(mockTextItem);
-        assertEquals("Sample text for testing", mockTextItem.getText(), "TextItem text should match the input");
+    void testSlideDimensions() {
+        assertEquals(1200, Slide.WIDTH);
+        assertEquals(800, Slide.HEIGHT);
     }
     
+    @Test
+    void testEmptySlideSize() {
+        assertEquals(0, slide.getSize());
+    }
+    
+    @Test
+    void testAppendMultipleItems() {
+        SlideItem mockItem1 = mock(SlideItem.class);
+        SlideItem mockItem2 = mock(SlideItem.class);
+        SlideItem mockItem3 = mock(SlideItem.class);
+        
+        slide.append(mockItem1);
+        slide.append(mockItem2);
+        slide.append(mockItem3);
+        
+        assertEquals(3, slide.getSize());
+        assertEquals(mockItem1, slide.getSlideItem(0));
+        assertEquals(mockItem2, slide.getSlideItem(1));
+        assertEquals(mockItem3, slide.getSlideItem(2));
+    }
 }

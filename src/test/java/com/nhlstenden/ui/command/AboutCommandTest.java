@@ -2,31 +2,34 @@ package com.nhlstenden.ui.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockedStatic;
+import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.awt.Frame;
-import javax.swing.JOptionPane;
-import com.nhlstenden.factorymethodandcomposite.Presentation;
-import com.nhlstenden.ui.view.TestAboutBox;
+import com.nhlstenden.ui.view.AboutBox;
 
 public class AboutCommandTest {
+    @Mock
     private Frame mockFrame;
-    private TestAboutCommand aboutCommand;
+    
+    private AboutCommand aboutCommand;
     
     @BeforeEach
     void setUp() {
-        mockFrame = mock(Frame.class);
-        aboutCommand = new TestAboutCommand(mockFrame);
-        TestAboutBox.reset();
+        MockitoAnnotations.openMocks(this);
+        aboutCommand = new AboutCommand(mockFrame);
     }
     
     @Test
-    void testExecute_CallsAboutBoxShow() {
-        // When
-        aboutCommand.execute();
-        
-        // Then
-        assertTrue(TestAboutBox.wasShown(), "AboutBox should have been shown");
-        assertEquals(mockFrame, TestAboutBox.getLastFrame(), "AboutBox should have been shown with the correct frame");
+    void testExecute_ShowsAboutDialog() {
+        try (MockedStatic<AboutBox> mockedAboutBox = mockStatic(AboutBox.class)) {
+            // When
+            aboutCommand.execute();
+            
+            // Then
+            mockedAboutBox.verify(() -> AboutBox.show(mockFrame));
+        }
     }
 }

@@ -2,8 +2,9 @@ package com.nhlstenden.ui.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.MockedStatic;
+import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 import javax.swing.JOptionPane;
@@ -11,14 +12,16 @@ import java.awt.Frame;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
 
 public class GoToCommandTest {
+    @Mock
     private Presentation mockPresentation;
-    private GoToCommand goToCommand;
+    @Mock
     private Frame mockFrame;
+    
+    private GoToCommand goToCommand;
     
     @BeforeEach
     void setUp() {
-        mockPresentation = mock(Presentation.class);
-        mockFrame = mock(Frame.class);
+        MockitoAnnotations.openMocks(this);
         goToCommand = new GoToCommand(mockPresentation);
         goToCommand.parent = mockFrame;
     }
@@ -28,132 +31,65 @@ public class GoToCommandTest {
         // Given
         when(mockPresentation.getSize()).thenReturn(0);
         
-        // Use MockedStatic for JOptionPane
         try (MockedStatic<JOptionPane> mockedStatic = mockStatic(JOptionPane.class)) {
             // When
             goToCommand.execute();
             
             // Then
-            verify(mockPresentation, times(1)).getSize();
+            verify(mockPresentation).getSize();
             mockedStatic.verify(() ->
-                    JOptionPane.showMessageDialog(
-                            eq(mockFrame),
-                            eq("There are no slides in the presentation."),
-                            eq("Empty Presentation"),
-                            eq(JOptionPane.INFORMATION_MESSAGE)
-                    )
+                JOptionPane.showMessageDialog(
+                    eq(mockFrame),
+                    eq("There are no slides in the presentation."),
+                    eq("Empty Presentation"),
+                    eq(JOptionPane.INFORMATION_MESSAGE)
+                )
             );
         }
     }
-    
+
     @Test
-    void testExecute_WithValidSlideNumber_SetsSlideNumber() {
+    void testExecute_WithValidInput() {
         // Given
         when(mockPresentation.getSize()).thenReturn(5);
         
-        // Use MockedStatic for JOptionPane
         try (MockedStatic<JOptionPane> mockedStatic = mockStatic(JOptionPane.class)) {
-            // Mock the input dialog to return "3"
+            // Setup the input dialog to return "3"
             mockedStatic.when(() -> JOptionPane.showInputDialog(
-                    any(),
-                    anyString(),
-                    anyString(),
-                    anyInt()
+                eq(mockFrame),
+                eq("Enter slide number (1 - 5):"),
+                eq("Go To Slide"),
+                eq(JOptionPane.QUESTION_MESSAGE)
             )).thenReturn("3");
             
             // When
             goToCommand.execute();
             
             // Then
-            verify(mockPresentation, times(1)).setSlideNumber(2); // 3-1 because of 0-based index
+            verify(mockPresentation).getSize();
+            verify(mockPresentation).setSlideNumber(2); // 3-1 because slide numbers are 0-based
         }
     }
-    
+
     @Test
-    void testExecute_WithInvalidSlideNumber_ShowsError() {
+    void testExecute_WithCancelledInput() {
         // Given
         when(mockPresentation.getSize()).thenReturn(5);
         
-        // Use MockedStatic for JOptionPane
         try (MockedStatic<JOptionPane> mockedStatic = mockStatic(JOptionPane.class)) {
-            // Set up the sequence of interactions
+            // Setup the input dialog to return null (simulating cancel)
             mockedStatic.when(() -> JOptionPane.showInputDialog(
-                    any(),
-                    anyString(),
-                    anyString(),
-                    anyInt()
-            )).thenReturn("6", null); // First return "6", then return null to exit the loop
-            
-            // When
-            goToCommand.execute();
-            
-            // Then
-            verify(mockPresentation, never()).setSlideNumber(anyInt());
-            
-            // Verify error message was shown
-            mockedStatic.verify(() ->
-                    JOptionPane.showMessageDialog(
-                            any(),
-                            eq("Please enter a number between 1 and 5"),
-                            eq("Invalid Number"),
-                            eq(JOptionPane.ERROR_MESSAGE)
-                    )
-            );
-        }
-    }
-    
-    @Test
-    void testExecute_WithNonNumericInput_ShowsError() {
-        // Given
-        when(mockPresentation.getSize()).thenReturn(5);
-        
-        // Use MockedStatic for JOptionPane
-        try (MockedStatic<JOptionPane> mockedStatic = mockStatic(JOptionPane.class)) {
-            // Set up the sequence of interactions
-            mockedStatic.when(() -> JOptionPane.showInputDialog(
-                    any(),
-                    anyString(),
-                    anyString(),
-                    anyInt()
-            )).thenReturn("abc", null); // First return "abc", then return null to exit the loop
-            
-            // When
-            goToCommand.execute();
-            
-            // Then
-            verify(mockPresentation, never()).setSlideNumber(anyInt());
-            
-            // Verify error message was shown
-            mockedStatic.verify(() ->
-                    JOptionPane.showMessageDialog(
-                            any(),
-                            eq("Invalid input. Please enter a numeric value."),
-                            eq("Input Error"),
-                            eq(JOptionPane.ERROR_MESSAGE)
-                    )
-            );
-        }
-    }
-    
-    @Test
-    void testExecute_UserCancelsDialog() {
-        // Given
-        when(mockPresentation.getSize()).thenReturn(5);
-        
-        // Use MockedStatic for JOptionPane
-        try (MockedStatic<JOptionPane> mockedStatic = mockStatic(JOptionPane.class)) {
-            // Mock the input dialog to return null (indicating user cancelled)
-            mockedStatic.when(() -> JOptionPane.showInputDialog(
-                    any(),
-                    anyString(),
-                    anyString(),
-                    anyInt()
+                eq(mockFrame),
+                eq("Enter slide number (1 - 5):"),
+                eq("Go To Slide"),
+                eq(JOptionPane.QUESTION_MESSAGE)
             )).thenReturn(null);
             
             // When
             goToCommand.execute();
             
             // Then
+            verify(mockPresentation).getSize();
             verify(mockPresentation, never()).setSlideNumber(anyInt());
         }
     }

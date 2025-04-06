@@ -20,14 +20,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
           cache: maven
-          
+
       - name: Configure Maven
         run: |
           echo "MAVEN_OPTS=-Xmx2048m" >> $GITHUB_ENV
@@ -37,6 +37,10 @@ jobs:
         
       - name: Run Tests
         run: mvn -B test
+
+      - name: Build and Test with Maven
+        run: mvn -B clean verify --file pom.xml
+
 
   promote-to-acceptance:
     runs-on: ubuntu-latest

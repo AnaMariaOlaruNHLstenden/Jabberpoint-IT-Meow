@@ -6,7 +6,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
 import com.nhlstenden.style.StyleManager;
-import com.nhlstenden.test.TestUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +23,6 @@ class SlideViewerFrameTest {
 
     @BeforeEach
     void setUp() {
-        TestUtils.setupHeadless();
         MockitoAnnotations.openMocks(this);
         frame = new SlideViewerFrame("Test Title", mockPresentation, mockStyleManager);
     }

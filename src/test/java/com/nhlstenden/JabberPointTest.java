@@ -25,7 +25,6 @@ public class JabberPointTest {
 
     @BeforeEach
     void setUp() {
-        TestUtils.setupHeadless();
         styleManager = new StyleManager();
         presentation = new Presentation();
         frame = new SlideViewerFrame("Test", presentation, styleManager);

@@ -13,18 +13,19 @@ import com.nhlstenden.ui.view.SlideViewerFrame;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
 import com.nhlstenden.accessor.Accessor;
 import com.nhlstenden.accessor.XMLAccessor;
-import com.nhlstenden.test.TestConfiguration;
+import com.nhlstenden.test.BaseGuiTest;
 
 import javax.swing.JOptionPane;
 import java.io.IOException;
 
-public class JabberPointTest extends TestConfiguration {
+public class JabberPointTest extends BaseGuiTest {
     private StyleManager styleManager;
     private Presentation presentation;
     private SlideViewerFrame frame;
 
     @BeforeEach
     void setUp() {
+        System.setProperty("java.awt.headless", "true");
         styleManager = new StyleManager();
         presentation = new Presentation();
         frame = new SlideViewerFrame("Test", presentation, styleManager);

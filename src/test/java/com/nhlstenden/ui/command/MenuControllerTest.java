@@ -8,9 +8,9 @@ import java.awt.*;
 
 import com.nhlstenden.factorymethodandcomposite.Presentation; 
 import com.nhlstenden.ui.view.TestAboutBox;
-import com.nhlstenden.test.TestConfiguration;
+import com.nhlstenden.test.BaseGuiTest;
 
-public class MenuControllerTest extends TestConfiguration {
+public class MenuControllerTest extends BaseGuiTest {
     private Frame mockFrame;
     private Presentation mockPresentation;
     private MenuController menuController;
@@ -18,6 +18,7 @@ public class MenuControllerTest extends TestConfiguration {
 
     @BeforeEach
     void setUp() {
+        System.setProperty("java.awt.headless", "true");
         mockFrame = mock(Frame.class);
         mockPresentation = mock(Presentation.class);
         mockCommand = mock(Command.class);

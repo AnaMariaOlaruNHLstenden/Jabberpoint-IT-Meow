@@ -6,7 +6,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
 import com.nhlstenden.style.StyleManager;
-import com.nhlstenden.test.TestConfiguration;
+import com.nhlstenden.test.BaseGuiTest;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +14,7 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class SlideViewerFrameTest extends TestConfiguration {
+class SlideViewerFrameTest extends BaseGuiTest {
     @Mock
     private Presentation mockPresentation;
     @Mock
@@ -24,6 +24,7 @@ class SlideViewerFrameTest extends TestConfiguration {
 
     @BeforeEach
     void setUp() {
+        System.setProperty("java.awt.headless", "true");
         MockitoAnnotations.openMocks(this);
         frame = new SlideViewerFrame("Test Title", mockPresentation, mockStyleManager);
     }

@@ -13,6 +13,7 @@ import com.nhlstenden.ui.view.SlideViewerFrame;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
 import com.nhlstenden.accessor.Accessor;
 import com.nhlstenden.accessor.XMLAccessor;
+import com.nhlstenden.test.TestUtils;
 
 import javax.swing.JOptionPane;
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class JabberPointTest {
 
     @BeforeEach
     void setUp() {
+        TestUtils.setupHeadless();
         styleManager = new StyleManager();
         presentation = new Presentation();
         frame = new SlideViewerFrame("Test", presentation, styleManager);

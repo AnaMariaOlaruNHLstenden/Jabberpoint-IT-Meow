@@ -8,6 +8,7 @@ import java.awt.*;
 
 import com.nhlstenden.factorymethodandcomposite.Presentation; 
 import com.nhlstenden.ui.view.TestAboutBox;
+import com.nhlstenden.test.TestUtils;
 
 public class MenuControllerTest {
     private Frame mockFrame;
@@ -17,6 +18,7 @@ public class MenuControllerTest {
 
     @BeforeEach
     void setUp() {
+        TestUtils.setupHeadless();
         mockFrame = mock(Frame.class);
         mockPresentation = mock(Presentation.class);
         mockCommand = mock(Command.class);

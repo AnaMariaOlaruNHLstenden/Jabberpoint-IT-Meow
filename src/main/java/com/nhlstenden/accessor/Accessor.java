@@ -2,30 +2,7 @@ package com.nhlstenden.accessor;
 
 import com.nhlstenden.app.DemoPresentation;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
-import com.nhlstenden.factorymethodandcomposite.Slide;
-import com.nhlstenden.factorymethodandcomposite.SlideItem;
-import com.nhlstenden.factorymethodandcomposite.SlideItemFactory;
-import com.nhlstenden.factorymethodandcomposite.TextItemCreator;
-import com.nhlstenden.factorymethodandcomposite.BitmapItemCreator;
-import com.nhlstenden.factorymethodandcomposite.TextItem;
-import com.nhlstenden.factorymethodandcomposite.BitmapItem;
-import com.nhlstenden.style.Style;
-import com.nhlstenden.style.StyleManager;
-import com.nhlstenden.ui.view.SlideViewer;
-import com.nhlstenden.ui.view.SlideViewerComponent;
-import com.nhlstenden.ui.view.SlideViewerFrame;
-import com.nhlstenden.ui.command.Command;
-import com.nhlstenden.ui.command.ExitCommand;
-import com.nhlstenden.ui.command.OpenCommand;
-import com.nhlstenden.ui.command.SaveCommand;
-import com.nhlstenden.ui.command.NextSlideCommand;
-import com.nhlstenden.ui.command.PrevSlideCommand;
-import com.nhlstenden.ui.command.GoToCommand;
-import com.nhlstenden.ui.command.MenuController;
-import com.nhlstenden.ui.command.MenuCommandKey;
-import com.nhlstenden.ui.command.KeyController;
-import com.nhlstenden.ui.command.NewCommand;
-import com.nhlstenden.ui.command.AboutCommand;
+
 
 
 

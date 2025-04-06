@@ -27,6 +27,8 @@ public class MenuControllerTest {
 
     @BeforeEach
     void setUp() {
+        // Enable headless mode
+        System.setProperty("java.awt.headless", "true");
         MockitoAnnotations.openMocks(this);
         testFrame = new TestFrame();
         menuController = new TestMenuController(testFrame, mockPresentation);
@@ -94,7 +96,7 @@ public class MenuControllerTest {
         private MenuBar menuBar;
 
         public TestFrame() {
-            super("Test Frame");
+            // Don't call super to avoid real UI initialization
             this.title = "Test Frame";
             this.menuBar = new MenuBar();
         }
@@ -121,11 +123,10 @@ public class MenuControllerTest {
 
         @Override
         public void repaint() {
-            // Do nothing for testing
+            // Do nothing in test environment
         }
     }
 
-    // Test-specific implementation that doesn't require a display
     private static class TestMenuController extends MenuController {
         public TestMenuController(Frame frame, Presentation presentation) {
             super(frame, presentation);
@@ -137,13 +138,11 @@ public class MenuControllerTest {
         }
     }
 
-    // Test-specific implementation for MenuItem
     private static class TestMenuItem extends MenuItem {
         private String label;
         private MenuShortcut shortcut;
 
         public TestMenuItem(String label) {
-            super(label);
             this.label = label;
         }
 
@@ -159,7 +158,7 @@ public class MenuControllerTest {
 
         @Override
         public void addActionListener(java.awt.event.ActionListener l) {
-            // Do nothing for testing
+            // Do nothing in test environment
         }
     }
 } 

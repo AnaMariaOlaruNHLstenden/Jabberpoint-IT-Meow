@@ -32,6 +32,7 @@ jobs:
         run: |
           echo "MAVEN_OPTS=-Xmx2048m" >> $GITHUB_ENV
           
+
       - name: Build and Test with Maven
         run: mvn -B clean verify -DskipTests=true
         
@@ -39,7 +40,10 @@ jobs:
         run: mvn -B test
 
       - name: Build and Test with Maven
-        run: mvn -B clean verify --file pom.xml
+        run: mvn -B clean verify -DskipTests=true
+        
+      - name: Run Tests
+        run: mvn -B test
 
 
   promote-to-acceptance:

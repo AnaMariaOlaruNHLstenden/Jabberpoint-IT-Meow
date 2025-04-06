@@ -13,12 +13,12 @@ import com.nhlstenden.ui.view.SlideViewerFrame;
 import com.nhlstenden.factorymethodandcomposite.Presentation;
 import com.nhlstenden.accessor.Accessor;
 import com.nhlstenden.accessor.XMLAccessor;
-import com.nhlstenden.test.TestUtils;
+import com.nhlstenden.test.TestConfiguration;
 
 import javax.swing.JOptionPane;
 import java.io.IOException;
 
-public class JabberPointTest {
+public class JabberPointTest extends TestConfiguration {
     private StyleManager styleManager;
     private Presentation presentation;
     private SlideViewerFrame frame;

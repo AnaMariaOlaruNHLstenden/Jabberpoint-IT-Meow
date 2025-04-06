@@ -8,8 +8,9 @@ import java.awt.*;
 
 import com.nhlstenden.factorymethodandcomposite.Presentation; 
 import com.nhlstenden.ui.view.TestAboutBox;
+import com.nhlstenden.test.TestConfiguration;
 
-public class MenuControllerTest {
+public class MenuControllerTest extends TestConfiguration {
     private Frame mockFrame;
     private Presentation mockPresentation;
     private MenuController menuController;

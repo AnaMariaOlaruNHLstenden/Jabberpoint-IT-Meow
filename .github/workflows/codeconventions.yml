@@ -20,14 +20,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
           cache: maven
-          
+
       - name: Configure Maven
         run: |
           echo "MAVEN_OPTS=-Xmx2048m" >> $GITHUB_ENV
@@ -35,12 +35,23 @@ jobs:
       - name: Build without tests
         run: mvn -B clean compile -DskipTests=true
         
+
       - name: Run Checkstyle
         run: mvn -B checkstyle:check
         
       - name: Generate Checkstyle Report
         run: mvn -B checkstyle:checkstyle
+
+      - name: Run Checkstyle
+        run: mvn -B checkstyle:check
         
+      - name: Generate Checkstyle Report
+
+        run: mvn checkstyle:checkstyle
+
+
+        run: mvn -B checkstyle:checkstyle
+
       - name: Upload Checkstyle Report
         uses: actions/upload-artifact@v3
         with:
